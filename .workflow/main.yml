@@ -5,17 +5,32 @@ triggers:
   trigger: auto
   push:
     branches:
-      - prefix/main
+      prefix:
+        - main
 stages:
   - name: build
     displayName: 构建
+    strategy: naturally
+    trigger: auto
+    executor: []
     steps:
-      - step: buildAndroid@1
+      - step: build@gradle
         name: build_apk
         displayName: Android APK 构建
-        inputs:
-          projectPath: ./
-          gradleTask: assembleDebug
-          gradleVersion: 9.5.1
-          javaVersion: 21
-          uploadArtifact: true
+        jdkVersion: '21'
+        gradleVersion: 9.5.1
+        commands:
+          - '# 功能：Android Debug 包构建'
+          - 'set -e'
+          - 'chmod +x ./gradlew'
+          - './gradlew assembleDebug --no-daemon'
+        artifacts:
+          - name: BUILD_ARTIFACT
+            path:
+              - ./app/build/outputs/apk/debug
+        settings: []
+        caches:
+          - ~/.gradle/caches
+        notify: []
+        strategy:
+          retry: '0'
