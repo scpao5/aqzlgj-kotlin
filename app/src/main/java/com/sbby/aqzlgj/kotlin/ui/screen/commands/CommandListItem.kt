@@ -3,8 +3,10 @@ package com.sbby.aqzlgj.kotlin.ui.screen.commands
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
-import android.widget.Toast
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -19,30 +21,94 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.sbby.aqzlgj.kotlin.data.CodeItem
 import com.sbby.aqzlgj.kotlin.data.PrivilegeManager
+import com.sbby.aqzlgj.kotlin.ui.LocalUiMode
+import com.sbby.aqzlgj.kotlin.ui.UiMode
+import top.yukonga.miuix.kmp.basic.Card as MiuixCard
+import top.yukonga.miuix.kmp.basic.CardDefaults as MiuixCardDefaults
+import top.yukonga.miuix.kmp.basic.Text as MiuixText
+import top.yukonga.miuix.kmp.basic.TextButton as MiuixTextButton
+import top.yukonga.miuix.kmp.theme.MiuixTheme
 
-/** 复制指令到剪贴板 */
+/** 复制指令到剪贴板（不弹 Toast） */
 fun copyCommand(context: Context, item: CodeItem) {
     val cm = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
     cm.setPrimaryClip(ClipData.newPlainText(item.title, item.code))
-    Toast.makeText(context, "已复制: ${item.title}", Toast.LENGTH_SHORT).show()
 }
 
-/** 执行指令（root 广播优先，失败回退普通广播） */
+/** 执行指令（root 广播优先，失败回退普通广播，不弹 Toast） */
 fun executeCommand(context: Context, item: CodeItem) {
     PrivilegeManager.execute(context, item.code)
-    Toast.makeText(context, "执行: ${item.title}", Toast.LENGTH_SHORT).show()
 }
 
-/** 指令卡片：标题 + 指令内容 + 复制/执行按钮（双主题通用） */
+/** 指令卡片：按 UI 模式分发 Miuix / Material 两套风格 */
 @Composable
 fun CommandListItem(
+    item: CodeItem,
+    showCategory: Boolean = false,
+    modifier: Modifier = Modifier,
+) {
+    when (LocalUiMode.current) {
+        UiMode.Miuix -> CommandListItemMiuix(item, showCategory, modifier)
+        UiMode.Material -> CommandListItemMaterial(item, showCategory, modifier)
+    }
+}
+
+/** Miuix 风格指令卡片 */
+@Composable
+fun CommandListItemMiuix(
+    item: CodeItem,
+    showCategory: Boolean = false,
+    modifier: Modifier = Modifier,
+) {
+    val context = LocalContext.current
+    MiuixCard(
+        modifier = modifier.fillMaxWidth(),
+        colors = MiuixCardDefaults.defaultColors(color = MiuixTheme.colorScheme.surfaceContainerHigh),
+    ) {
+        Column(modifier = Modifier.padding(horizontal = 14.dp, vertical = 10.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                if (showCategory) {
+                    MiuixText(
+                        text = item.category,
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.Medium,
+                        color = MiuixTheme.colorScheme.primary,
+                        modifier = Modifier.padding(end = 8.dp),
+                    )
+                }
+                MiuixText(
+                    text = item.title,
+                    fontWeight = FontWeight.SemiBold,
+                    color = MiuixTheme.colorScheme.onSurface,
+                    modifier = Modifier.weight(1f),
+                )
+                // 文字按钮（第一版样式）
+                MiuixTextButton(text = "复制", onClick = { copyCommand(context, item) })
+                MiuixTextButton(text = "执行", onClick = { executeCommand(context, item) })
+            }
+            MiuixText(
+                text = item.code,
+                fontSize = 12.sp,
+                color = MiuixTheme.colorScheme.onSurfaceVariantSummary,
+                fontFamily = FontFamily.Monospace,
+            )
+        }
+    }
+}
+
+/** Material 风格指令卡片 */
+@Composable
+fun CommandListItemMaterial(
     item: CodeItem,
     showCategory: Boolean = false,
     modifier: Modifier = Modifier,
@@ -55,7 +121,7 @@ fun CommandListItem(
         ),
     ) {
         Column(modifier = Modifier.padding(horizontal = 14.dp, vertical = 10.dp)) {
-            Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
                 if (showCategory) {
                     Surface(
                         shape = RoundedCornerShape(6.dp),
@@ -76,6 +142,7 @@ fun CommandListItem(
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier.weight(1f),
                 )
+                // 文字按钮（第一版样式）
                 TextButton(onClick = { copyCommand(context, item) }) {
                     Text("复制")
                 }
@@ -83,7 +150,6 @@ fun CommandListItem(
                     Text("执行", color = MaterialTheme.colorScheme.primary)
                 }
             }
-            Spacer(Modifier.height(4.dp))
             Text(
                 text = item.code,
                 style = MaterialTheme.typography.bodySmall,

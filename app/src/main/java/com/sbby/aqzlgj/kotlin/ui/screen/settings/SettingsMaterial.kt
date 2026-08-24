@@ -15,7 +15,9 @@ import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.BugReport
 import androidx.compose.material.icons.filled.ContactPage
 import androidx.compose.material.icons.filled.Palette
+import androidx.compose.material.icons.filled.NotificationsOff
 import androidx.compose.material.icons.filled.Update
+import androidx.compose.material.icons.filled.UpdateDisabled
 import androidx.compose.material.icons.rounded.Dashboard
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LargeFlexibleTopAppBar
@@ -76,15 +78,35 @@ fun SettingPagerMaterial(
             Spacer(modifier = Modifier.height(8.dp))
             SegmentedColumn(
                 modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
-                content = listOf {
-                    SegmentedSwitchItem(
-                        icon = Icons.Filled.Update,
-                        title = stringResource(id = R.string.settings_check_update),
-                        summary = stringResource(id = R.string.settings_check_update_summary),
-                        checked = uiState.checkUpdate,
-                        onCheckedChange = actions.onSetCheckUpdate
-                    )
-                }
+                content = listOf(
+                    {
+                        SegmentedSwitchItem(
+                            icon = Icons.Filled.Update,
+                            title = stringResource(id = R.string.settings_check_update),
+                            summary = stringResource(id = R.string.settings_check_update_summary),
+                            checked = uiState.checkUpdate,
+                            onCheckedChange = actions.onSetCheckUpdate
+                        )
+                    },
+                    {
+                        SegmentedSwitchItem(
+                            icon = Icons.Filled.NotificationsOff,
+                            title = "隐藏 Toast 提示",
+                            summary = "开启后不再弹出 Toast 提示",
+                            checked = uiState.hideToast,
+                            onCheckedChange = actions.onSetHideToast
+                        )
+                    },
+                    {
+                        SegmentedSwitchItem(
+                            icon = Icons.Filled.UpdateDisabled,
+                            title = "隐藏更新弹窗",
+                            summary = "开启后不再提示应用更新",
+                            checked = uiState.hideUpdateDialog,
+                            onCheckedChange = actions.onSetHideUpdateDialog
+                        )
+                    }
+                )
             )
 
             SegmentedColumn(

@@ -60,4 +60,12 @@ class SettingsRepositoryImpl : SettingsRepository {
     override var pageScale: Float
         get() = prefs.getFloat("page_scale", 1.0f)
         set(value) = prefs.edit { putFloat("page_scale", value) }
+
+    override var hideToast: Boolean
+        get() = prefs.getBoolean("hide_toast", false)
+        set(value) = prefs.edit { putBoolean("hide_toast", value) }
+
+    override var hideUpdateDialog: Boolean
+        get() = prefs.getBoolean("hide_update_dialog", false)
+        set(value) = prefs.edit { putBoolean("hide_update_dialog", value) }
 }

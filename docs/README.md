@@ -30,8 +30,8 @@ Currently retained practical features include:
 1. Clone the project:
 
 ```bash
-git clone https://github.com/chenaizhang/KernelSU-Style-UI-Kit.git
-cd KernelSU-Style-UI-Kit
+git clone https://github.com/chenaizhang/aqzlgj-kotlin.git
+cd aqzlgj-kotlin
 ```
 
 2. Open the project with Android Studio and wait for Gradle sync to finish.

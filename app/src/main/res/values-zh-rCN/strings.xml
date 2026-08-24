@@ -13,7 +13,7 @@
     <string name="permission_optional">可选</string>
     <string name="permission_action_required">待处理</string>
     <string name="permission_grant_action">去授权</string>
-    <string name="permission_status_ready_title">授权已完成</string>
+    <string name="permission_status_ready_title">工作中</string>
     <string name="permission_status_missing_title">需要完成授权</string>
     <string name="home">主页</string>
     <string name="settings">设置</string>

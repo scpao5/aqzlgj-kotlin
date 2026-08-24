@@ -19,12 +19,14 @@ import com.sbby.aqzlgj.kotlin.ui.LocalUiMode
 import com.sbby.aqzlgj.kotlin.ui.UiMode
 import com.sbby.aqzlgj.kotlin.ui.navigation3.Navigator
 import com.sbby.aqzlgj.kotlin.ui.navigation3.Route
+import com.sbby.aqzlgj.kotlin.service.FloatWindowService
+import com.sbby.aqzlgj.kotlin.ui.util.AppToast
 import com.sbby.aqzlgj.kotlin.ui.viewmodel.CommandsViewModel
 
-/** 悬浮窗开关入口：无权限先申请，有权限提示（服务在后续版本接入） */
+/** 悬浮窗开关：无权限先申请，有权限则启动/停止悬浮窗服务 */
 fun openFloatWindow(context: Context) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.canDrawOverlays(context)) {
-        Toast.makeText(context, "请授予悬浮窗权限", Toast.LENGTH_SHORT).show()
+        AppToast.show(context, "请授予悬浮窗权限")
         val intent = Intent(
             Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
             Uri.parse("package:${context.packageName}")
@@ -32,7 +34,14 @@ fun openFloatWindow(context: Context) {
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         context.startActivity(intent)
     } else {
-        Toast.makeText(context, "悬浮窗服务开发中，敬请期待", Toast.LENGTH_SHORT).show()
+        val serviceIntent = Intent(context, FloatWindowService::class.java)
+        if (FloatWindowService.isRunning) {
+            context.stopService(serviceIntent)
+            AppToast.show(context, "悬浮窗已关闭")
+        } else {
+            context.startForegroundService(serviceIntent)
+            AppToast.show(context, "悬浮窗已开启")
+        }
     }
 }
 

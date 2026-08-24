@@ -12,7 +12,7 @@ import java.util.zip.GZIPOutputStream
 fun getBugreportFile(context: Context): File {
     val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH_mm")
     val current = LocalDateTime.now().format(formatter)
-    val targetFile = File(context.cacheDir, "KernelSUStyleUIKit_bugreport_${current}.txt.gz")
+    val targetFile = File(context.cacheDir, "aqzlgj_kotlin_bugreport_${current}.txt.gz")
 
     val report = buildString {
         appendLine("App: ${getAppVersion(context)}")

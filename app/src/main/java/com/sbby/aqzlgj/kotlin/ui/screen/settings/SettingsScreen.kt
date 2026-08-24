@@ -32,6 +32,8 @@ fun SettingPager(
             viewModel.setUiMode(if (index == 0) UiMode.Miuix.value else UiMode.Material.value)
         },
         onOpenAbout = { navigator.push(Route.About) },
+        onSetHideToast = viewModel::setHideToast,
+        onSetHideUpdateDialog = viewModel::setHideUpdateDialog,
     )
 
     when (LocalUiMode.current) {

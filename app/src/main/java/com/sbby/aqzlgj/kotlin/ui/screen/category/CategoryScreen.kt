@@ -1,79 +1,74 @@
 package com.sbby.aqzlgj.kotlin.ui.screen.category
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.platform.LocalContext
+import com.sbby.aqzlgj.kotlin.data.CodeData
+import com.sbby.aqzlgj.kotlin.data.CodeItem
+import com.sbby.aqzlgj.kotlin.ui.LocalUiMode
+import com.sbby.aqzlgj.kotlin.ui.UiMode
 import com.sbby.aqzlgj.kotlin.ui.navigation3.LocalNavigator
 import com.sbby.aqzlgj.kotlin.ui.navigation3.Route
-import com.sbby.aqzlgj.kotlin.ui.screen.commands.CommandListItem
-import com.sbby.aqzlgj.kotlin.ui.viewmodel.CommandsViewModel
 
-/** 分类指令列表页（双主题通用实现） */
-@OptIn(ExperimentalMaterial3Api::class)
+/** 分类指令列表页：数据加载 + 分段渲染 + 双风格分发 */
 @Composable
 fun CategoryScreen() {
     val navigator = LocalNavigator.current
+    val context = LocalContext.current
     val categoryName = (navigator.current() as? Route.Category)?.name ?: ""
-    val viewModel = viewModel<CommandsViewModel>()
-    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
-    val items = viewModel.itemsForCategory(categoryName)
+    var loading by remember { mutableStateOf(true) }
+    var allItems by remember { mutableStateOf<List<CodeItem>>(emptyList()) }
 
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                title = { Text(categoryName) },
-                navigationIcon = {
-                    IconButton(onClick = { navigator.pop() }) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "返回")
-                    }
-                },
-            )
-        },
-    ) { innerPadding ->
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(innerPadding),
-            contentAlignment = Alignment.Center,
-        ) {
-            when {
-                uiState.loading -> CircularProgressIndicator()
-                items.isEmpty() -> Text(
-                    text = "该分区暂无指令",
-                    style = MaterialTheme.typography.bodyLarge,
-                    color = MaterialTheme.colorScheme.outline,
-                )
-                else -> LazyColumn(
-                    modifier = Modifier.fillMaxSize(),
-                    contentPadding = androidx.compose.foundation.layout.PaddingValues(
-                        horizontal = 14.dp, vertical = 10.dp
-                    ),
-                    verticalArrangement = androidx.compose.foundation.layout.Arrangement.spacedBy(8.dp),
-                ) {
-                    items(items, key = { "${it.category}:${it.title}:${it.code}" }) { item ->
-                        CommandListItem(item = item)
-                    }
-                }
-            }
+    LaunchedEffect(categoryName) {
+        allItems = CodeData.loadCodes(context).filter { it.category == categoryName }
+        loading = false
+    }
+
+    // 分段渲染：每批 100 条，滑到距末尾 10 条内自动加载下一批
+    val batchSize = 100
+    val listState = rememberLazyListState()
+    var visibleCount by remember { mutableIntStateOf(batchSize) }
+    val visibleItems = remember(allItems, visibleCount) {
+        if (allItems.isEmpty()) emptyList() else allItems.subList(0, visibleCount.coerceAtMost(allItems.size))
+    }
+    val shouldLoadMore by remember {
+        derivedStateOf {
+            val last = listState.layoutInfo.visibleItemsInfo.lastOrNull()?.index ?: -1
+            last >= visibleCount - 10 && visibleCount < allItems.size
         }
+    }
+    LaunchedEffect(shouldLoadMore) {
+        if (shouldLoadMore && visibleCount < allItems.size) {
+            visibleCount = minOf(visibleCount + batchSize, allItems.size)
+        }
+    }
+
+    val onBack = { navigator.pop() }
+
+    when (LocalUiMode.current) {
+        UiMode.Miuix -> CategoryScreenMiuix(
+            categoryName = categoryName,
+            loading = loading,
+            items = visibleItems,
+            empty = allItems.isEmpty(),
+            listState = listState,
+            onBack = onBack,
+        )
+
+        UiMode.Material -> CategoryScreenMaterial(
+            categoryName = categoryName,
+            loading = loading,
+            items = visibleItems,
+            empty = allItems.isEmpty(),
+            listState = listState,
+            onBack = onBack,
+        )
     }
 }

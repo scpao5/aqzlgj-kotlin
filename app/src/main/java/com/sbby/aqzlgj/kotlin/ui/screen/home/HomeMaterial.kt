@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.ErrorOutline
 import androidx.compose.material3.AssistChip
@@ -41,6 +42,9 @@ import com.sbby.aqzlgj.kotlin.R
 import com.sbby.aqzlgj.kotlin.permission.PermissionState
 import com.sbby.aqzlgj.kotlin.ui.component.material.TonalCard
 
+// 升级公告：内容就绪后改为 true 即可显示
+private const val showAnnouncement = true
+
 @Composable
 fun HomePagerMaterial(
     state: HomeUiState,
@@ -62,10 +66,15 @@ fun HomePagerMaterial(
                 .padding(horizontal = 16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            // Keep the theme settings preview in sync whenever this home layout changes.
-            WarningCard(stringResource(R.string.home_sample_notification))
-            PermissionCard(permissionState, actions.onPermissionsClick)
+            // 权限状态大卡（给完权限变绿）
+            PermissionCard(permissionState, state.rootAvailable, actions.onPermissionsClick)
+            // 升级公告（暂时隐藏）
+            if (showAnnouncement) {
+                WarningCard(stringResource(R.string.home_sample_notification))
+            }
+            // App 版本
             InfoCard(systemInfo = state.systemInfo)
+            // GitHub 仓库链接
             ExampleLinkCard(onOpenUrl = actions.onOpenUrl)
             Spacer(Modifier.height(bottomInnerPadding))
         }
@@ -87,9 +96,11 @@ private fun TopBar(
     )
 }
 
+/** 权限状态大卡：权限齐了变绿 */
 @Composable
 private fun PermissionCard(
     state: PermissionState,
+    rootAvailable: Boolean,
     onClick: () -> Unit,
 ) {
     Card(
@@ -148,7 +159,7 @@ private fun PermissionCard(
                     label = {
                         Text(
                             if (state.requiredGranted) {
-                                stringResource(R.string.permission_granted)
+                                if (rootAvailable) "Root 模式" else "免 Root 模式"
                             } else {
                                 stringResource(R.string.permission_action_required)
                             }
@@ -168,13 +179,13 @@ private fun PermissionCard(
     }
 }
 
+
 @Composable
 private fun WarningCard(
     message: String,
     color: Color = MaterialTheme.colorScheme.error,
-    onClick: (() -> Unit)? = null
 ) {
-    val content = @Composable {
+    TonalCard(containerColor = color) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -182,11 +193,6 @@ private fun WarningCard(
         ) {
             Text(text = message, style = MaterialTheme.typography.bodyMedium)
         }
-    }
-    if (onClick != null) {
-        TonalCard(containerColor = color, onClick = onClick, content = content)
-    } else {
-        TonalCard(containerColor = color, content = content)
     }
 }
 
@@ -201,7 +207,10 @@ private fun ExampleLinkCard(onOpenUrl: (String) -> Unit) {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Column {
-                Text(text = stringResource(R.string.home_example_link_title), style = MaterialTheme.typography.titleSmall)
+                Text(
+                    text = stringResource(R.string.home_example_link_title),
+                    style = MaterialTheme.typography.titleSmall
+                )
                 Spacer(Modifier.height(4.dp))
                 Text(
                     text = stringResource(R.string.home_example_link_subtitle),
@@ -221,17 +230,12 @@ private fun InfoCard(systemInfo: SystemInfo) {
                 .fillMaxWidth()
                 .padding(start = 24.dp, top = 24.dp, end = 24.dp, bottom = 16.dp)
         ) {
-            @Composable
-            fun InfoCardItem(label: String, content: String) {
-                Text(text = label, style = MaterialTheme.typography.bodyLarge)
-                Text(
-                    text = content,
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.outline
-                )
-            }
-
-            InfoCardItem(stringResource(R.string.home_app_version), systemInfo.appVersion)
+            Text(text = stringResource(R.string.home_app_version), style = MaterialTheme.typography.bodyLarge)
+            Text(
+                text = systemInfo.appVersion,
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.outline
+            )
         }
     }
 }

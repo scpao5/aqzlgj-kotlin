@@ -17,5 +17,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "KernelSUStyleUIKit"
+rootProject.name = "aqzlgj-kotlin"
 include(":app")

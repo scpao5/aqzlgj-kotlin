@@ -22,11 +22,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.OpenInNew
-import androidx.compose.material.icons.filled.BatterySaver
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.ErrorOutline
-import androidx.compose.material.icons.filled.Folder
-import androidx.compose.material.icons.filled.Mic
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.WebAsset
 import androidx.compose.material3.AssistChip
@@ -93,16 +90,10 @@ fun PermissionScreen() {
     }
 
     val actions = PermissionActions(
-        onStorage = {
-            manager.legacyStoragePermission()?.let(permissionLauncher::launch)
-                ?: settingsLauncher.launch(manager.storageSettingsIntent())
-        },
         onNotification = {
             manager.notificationRuntimePermission()?.let(permissionLauncher::launch)
                 ?: settingsLauncher.launch(manager.notificationSettingsIntent())
         },
-        onMicrophone = { permissionLauncher.launch(manager.microphonePermission()) },
-        onBattery = { settingsLauncher.launch(manager.batteryWhitelistIntent()) },
         onOverlay = { settingsLauncher.launch(manager.overlaySettingsIntent()) },
     )
     val onBack = dropUnlessResumed { navigator.pop() }
@@ -114,10 +105,7 @@ fun PermissionScreen() {
 }
 
 private data class PermissionActions(
-    val onStorage: () -> Unit,
     val onNotification: () -> Unit,
-    val onMicrophone: () -> Unit,
-    val onBattery: () -> Unit,
     val onOverlay: () -> Unit,
 )
 
@@ -188,32 +176,11 @@ private fun PermissionScreenMiuix(
                         .padding(top = 12.dp)
                 ) {
                     PermissionRowMiuix(
-                        stringResource(R.string.permission_storage),
-                        state.storage,
-                        true,
-                        Icons.Default.Folder,
-                        actions.onStorage,
-                    )
-                    PermissionRowMiuix(
                         stringResource(R.string.permission_notification),
                         state.notification,
                         true,
                         Icons.Default.Notifications,
                         actions.onNotification,
-                    )
-                    PermissionRowMiuix(
-                        stringResource(R.string.permission_microphone),
-                        state.microphone,
-                        true,
-                        Icons.Default.Mic,
-                        actions.onMicrophone,
-                    )
-                    PermissionRowMiuix(
-                        stringResource(R.string.permission_battery),
-                        state.batteryWhitelist,
-                        true,
-                        Icons.Default.BatterySaver,
-                        actions.onBattery,
                     )
                     PermissionRowMiuix(
                         stringResource(R.string.permission_overlay),
@@ -339,32 +306,11 @@ private fun PermissionScreenMaterial(
                         verticalArrangement = Arrangement.spacedBy(12.dp),
                     ) {
                         PermissionRowMaterial(
-                            stringResource(R.string.permission_storage),
-                            state.storage,
-                            true,
-                            Icons.Default.Folder,
-                            actions.onStorage,
-                        )
-                        PermissionRowMaterial(
                             stringResource(R.string.permission_notification),
                             state.notification,
                             true,
                             Icons.Default.Notifications,
                             actions.onNotification,
-                        )
-                        PermissionRowMaterial(
-                            stringResource(R.string.permission_microphone),
-                            state.microphone,
-                            true,
-                            Icons.Default.Mic,
-                            actions.onMicrophone,
-                        )
-                        PermissionRowMaterial(
-                            stringResource(R.string.permission_battery),
-                            state.batteryWhitelist,
-                            true,
-                            Icons.Default.BatterySaver,
-                            actions.onBattery,
                         )
                         PermissionRowMaterial(
                             stringResource(R.string.permission_overlay),

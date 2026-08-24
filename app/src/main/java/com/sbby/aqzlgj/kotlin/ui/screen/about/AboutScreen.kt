@@ -14,10 +14,10 @@ import com.sbby.aqzlgj.kotlin.ui.navigation3.LocalNavigator
 fun AboutScreen() {
     val navigator = LocalNavigator.current
     val uriHandler = LocalUriHandler.current
-    val htmlString = stringResource(
-        id = R.string.about_source_link,
-        "<b><a href=\"https://github.com/scpao5/aqzlgj\">Github</a></b>"
-    )
+    val githubLink = "<b><a href=\"https://github.com/scpao5/aqzlgj\">Github</a></b>"
+    val qqLink = "<a href=\"mqqapi://card/show_pslcard?src_type=internal&version=1&uin=771217201&card_type=person&source=qrcode\">QQ: 771217201 (作者)</a>"
+    val htmlString =
+        stringResource(id = R.string.about_source_link, githubLink) + "<br/>" + qqLink
     val state = AboutUiState(
         title = stringResource(R.string.about),
         appName = stringResource(R.string.app_name),

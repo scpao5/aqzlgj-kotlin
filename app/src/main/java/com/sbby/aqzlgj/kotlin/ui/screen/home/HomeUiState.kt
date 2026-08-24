@@ -9,6 +9,7 @@ data class HomeUiState(
     val latestVersionInfo: LatestVersionInfo,
     val currentAppVersionCode: Long,
     val systemInfo: SystemInfo,
+    val rootAvailable: Boolean = false,
 )
 
 @Immutable

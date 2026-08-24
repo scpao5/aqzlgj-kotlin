@@ -294,24 +294,7 @@ private fun AboutContent(
                         iconY = y + size.height
                     },
             ) {
-                Image(
-                    modifier = Modifier
-                        .requiredSize(245.dp)
-                        .then(
-                            if (enableBlur) {
-                                Modifier.textureBlur(
-                                    backdrop = backdrop,
-                                    shape = RoundedCornerShape(0.dp),
-                                    blurRadius = 150f,
-                                    colors = BlurColors(blendColors = logoBlend),
-                                    contentBlendMode = ComposeBlendMode.DstIn,
-                                    enabled = true,
-                                )
-                            } else Modifier
-                        ),
-                    painter = painterResource(id = R.drawable.ic_logo),
-                    contentDescription = null,
-                )
+                Box(modifier = Modifier.requiredSize(245.dp))
             }
             Text(
                 modifier = Modifier

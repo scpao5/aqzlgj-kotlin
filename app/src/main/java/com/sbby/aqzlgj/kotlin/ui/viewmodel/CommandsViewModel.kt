@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import com.sbby.aqzlgj.kotlin.data.CodeData
 import com.sbby.aqzlgj.kotlin.data.CodeItem
@@ -26,15 +27,15 @@ class CommandsViewModel : ViewModel() {
     val uiState: StateFlow<CommandsUiState> = _uiState.asStateFlow()
 
     init {
+        // root 检测与数据加载并行，互不阻塞
         viewModelScope.launch {
-            val root = PrivilegeManager.checkRoot()
+            _uiState.update { it.copy(rootAvailable = PrivilegeManager.checkRoot()) }
+        }
+        viewModelScope.launch {
             val items = CodeData.loadCodes(templateApp)
-            _uiState.value = CommandsUiState(
-                loading = false,
-                categories = CodeData.getCategories(),
-                items = items,
-                rootAvailable = root,
-            )
+            _uiState.update {
+                it.copy(loading = false, categories = CodeData.getCategories(), items = items)
+            }
         }
     }
 

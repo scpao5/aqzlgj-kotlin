@@ -10,6 +10,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import com.sbby.aqzlgj.kotlin.data.PrivilegeManager
 import com.sbby.aqzlgj.kotlin.templateApp
 import com.sbby.aqzlgj.kotlin.ui.screen.home.HomeUiState
 import com.sbby.aqzlgj.kotlin.ui.screen.home.SystemInfo
@@ -24,16 +25,21 @@ class HomeViewModel : ViewModel() {
 
     fun refresh() {
         viewModelScope.launch {
-            val baseState = withContext(Dispatchers.IO) { buildState() }
+            val rootAvailable = withContext(Dispatchers.IO) { PrivilegeManager.checkRoot() }
+            val baseState = withContext(Dispatchers.IO) { buildState(rootAvailable) }
             _uiState.update { baseState }
             if (baseState.checkUpdateEnabled) {
-                val latestVersionInfo = withContext(Dispatchers.IO) { checkNewVersion() }
-                _uiState.update { it.copy(latestVersionInfo = latestVersionInfo) }
+                val hideUpdate = templateApp.getSharedPreferences("settings", Context.MODE_PRIVATE)
+                    .getBoolean("hide_update_dialog", false)
+                if (!hideUpdate) {
+                    val latestVersionInfo = withContext(Dispatchers.IO) { checkNewVersion() }
+                    _uiState.update { it.copy(latestVersionInfo = latestVersionInfo) }
+                }
             }
         }
     }
 
-    private fun buildState(): HomeUiState {
+    private fun buildState(rootAvailable: Boolean = false): HomeUiState {
         val appVersion = getAppVersion(templateApp)
 
         return HomeUiState(
@@ -44,6 +50,7 @@ class HomeViewModel : ViewModel() {
             systemInfo = SystemInfo(
                 appVersion = "${appVersion.versionName} (${appVersion.versionCode})",
             ),
+            rootAvailable = rootAvailable,
         )
     }
 }

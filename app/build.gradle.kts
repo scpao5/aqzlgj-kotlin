@@ -99,7 +99,7 @@ androidComponents {
 
 base {
     archivesName.set(
-        "KernelSUStyleUIKit_${managerVersionName}_${managerVersionCode}"
+        "aqzlgj-kotlin_${managerVersionName}_${managerVersionCode}"
     )
 }
 

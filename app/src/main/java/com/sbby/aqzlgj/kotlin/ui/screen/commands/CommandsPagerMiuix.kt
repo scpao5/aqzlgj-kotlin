@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -139,7 +140,7 @@ fun CommandsPagerMiuix(
                             endActions = {
                                 Icon(
                                     imageVector = MiuixIcons.Link,
-                                    tint = colorScheme.onSurfaceVariant,
+                                    tint = colorScheme.onSurfaceVariantSummary,
                                     contentDescription = null
                                 )
                             },

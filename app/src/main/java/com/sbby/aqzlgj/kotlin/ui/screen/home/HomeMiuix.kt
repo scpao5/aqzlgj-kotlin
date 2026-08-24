@@ -19,8 +19,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.CheckCircleOutline
 import androidx.compose.material.icons.rounded.Cancel
+import androidx.compose.material.icons.rounded.CheckCircleOutline
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -43,17 +43,17 @@ import top.yukonga.miuix.kmp.basic.CardDefaults
 import top.yukonga.miuix.kmp.basic.Icon
 import top.yukonga.miuix.kmp.basic.MiuixScrollBehavior
 import top.yukonga.miuix.kmp.basic.Scaffold
-import top.yukonga.miuix.kmp.basic.ScrollBehavior
 import top.yukonga.miuix.kmp.basic.Text
 import top.yukonga.miuix.kmp.basic.TopAppBar
-import top.yukonga.miuix.kmp.blur.LayerBackdrop
 import top.yukonga.miuix.kmp.blur.layerBackdrop
 import top.yukonga.miuix.kmp.icon.MiuixIcons
 import top.yukonga.miuix.kmp.icon.extended.Link
-import top.yukonga.miuix.kmp.theme.MiuixTheme
 import top.yukonga.miuix.kmp.theme.MiuixTheme.colorScheme
 import top.yukonga.miuix.kmp.utils.overScrollVertical
 import top.yukonga.miuix.kmp.utils.scrollEndHaptic
+
+// 升级公告：内容就绪后改为 true 即可显示
+private const val showAnnouncement = true
 
 @Composable
 fun HomePagerMiuix(
@@ -62,18 +62,22 @@ fun HomePagerMiuix(
     actions: HomeActions,
     bottomInnerPadding: Dp,
 ) {
+    val githubUrl = stringResource(R.string.home_example_link_url)
     val scrollBehavior = MiuixScrollBehavior()
     val enableBlur = LocalEnableBlur.current
     val backdrop = rememberBlurBackdrop(enableBlur)
     val blurActive = backdrop != null
     val barColor = if (blurActive) Color.Transparent else colorScheme.surface
+
     Scaffold(
         topBar = {
-            TopBar(
-                scrollBehavior = scrollBehavior,
-                backdrop = backdrop,
-                barColor = barColor,
-            )
+            BlurredBar(backdrop) {
+                TopAppBar(
+                    color = barColor,
+                    title = stringResource(R.string.app_name),
+                    scrollBehavior = scrollBehavior
+                )
+            }
         },
         popupHost = { },
         contentWindowInsets = WindowInsets.systemBars.add(WindowInsets.displayCutout).only(WindowInsetsSides.Horizontal)
@@ -92,25 +96,63 @@ fun HomePagerMiuix(
                 item {
                     Column(
                         modifier = Modifier.padding(vertical = 12.dp),
-                        horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.spacedBy(12.dp),
                     ) {
-                        // Keep the theme settings preview in sync whenever this home layout changes.
-                        WarningCard(stringResource(R.string.home_sample_notification))
-                        PermissionCardMiuix(permissionState, actions.onPermissionsClick)
-                        InfoCard(systemInfo = state.systemInfo)
-                        ExampleLinkCard(onOpenUrl = actions.onOpenUrl)
+                        // 权限状态大卡（给完权限变绿）
+                        PermissionCardMiuix(permissionState, state.rootAvailable, actions.onPermissionsClick)
+                        // 升级公告（暂时隐藏）
+                        if (showAnnouncement) {
+                            WarningCard(stringResource(R.string.home_sample_notification))
+                        }
                     }
-                    Spacer(Modifier.height(bottomInnerPadding))
                 }
+                item {
+                    Card(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(top = 12.dp),
+                        colors = CardDefaults.defaultColors(color = colorScheme.surfaceContainerHigh),
+                    ) {
+                        BasicComponent(
+                            title = stringResource(R.string.home_app_version),
+                            summary = state.systemInfo.appVersion,
+                        )
+                    }
+                }
+                item {
+                    Card(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(top = 12.dp),
+                        colors = CardDefaults.defaultColors(color = colorScheme.surfaceContainerHigh),
+                        onClick = { actions.onOpenUrl(githubUrl) },
+                        showIndication = true,
+                    ) {
+                        BasicComponent(
+                            title = stringResource(R.string.home_example_link_title),
+                            summary = stringResource(R.string.home_example_link_subtitle),
+                            endActions = {
+                                Icon(
+                                    imageVector = MiuixIcons.Link,
+                                    tint = colorScheme.primary,
+                                    contentDescription = null
+                                )
+                            },
+                            onClick = { actions.onOpenUrl(githubUrl) },
+                        )
+                    }
+                }
+                item { Spacer(Modifier.height(bottomInnerPadding)) }
             }
         }
     }
 }
 
+/** 权限状态大卡：权限齐了变绿 */
 @Composable
 private fun PermissionCardMiuix(
     state: PermissionState,
+    rootAvailable: Boolean,
     onClick: () -> Unit,
 ) {
     val requiredGranted = state.requiredGranted
@@ -137,7 +179,7 @@ private fun PermissionCardMiuix(
         ) {
             Box(
                 modifier = Modifier
-                    .matchParentSize()
+                    .fillMaxSize()
                     .offset(x = 70.dp, y = 44.dp),
                 contentAlignment = Alignment.BottomEnd,
             ) {
@@ -177,7 +219,7 @@ private fun PermissionCardMiuix(
                 Text(
                     text =
                         if (requiredGranted) {
-                            stringResource(R.string.permission_granted)
+                            if (rootAvailable) "Root 模式" else "免 Root 模式"
                         } else {
                             stringResource(R.string.permission_action_required)
                         },
@@ -186,79 +228,6 @@ private fun PermissionCardMiuix(
                     color = textColor.copy(alpha = 0.78f),
                 )
             }
-        }
-    }
-}
-
-@Composable
-private fun TopBar(
-    scrollBehavior: ScrollBehavior,
-    backdrop: LayerBackdrop?,
-    barColor: Color,
-) {
-    BlurredBar(backdrop) {
-        TopAppBar(
-            color = barColor,
-            title = stringResource(R.string.app_name),
-            scrollBehavior = scrollBehavior
-        )
-    }
-}
-
-@Composable
-private fun ExampleLinkCard(
-    onOpenUrl: (String) -> Unit,
-) {
-    val url = stringResource(R.string.home_example_link_url)
-    Card(modifier = Modifier.fillMaxWidth()) {
-        BasicComponent(
-            title = stringResource(R.string.home_example_link_title),
-            summary = stringResource(R.string.home_example_link_subtitle),
-            endActions = {
-                Icon(
-                    imageVector = MiuixIcons.Link,
-                    tint = colorScheme.onSurface,
-                    contentDescription = null
-                )
-            },
-            onClick = { onOpenUrl(url) }
-        )
-    }
-}
-
-@Composable
-private fun InfoCard(systemInfo: SystemInfo) {
-    @Composable
-    fun InfoText(
-        title: String,
-        content: String,
-        bottomPadding: Dp = 24.dp
-    ) {
-        Text(
-            text = title,
-            fontSize = MiuixTheme.textStyles.headline1.fontSize,
-            fontWeight = FontWeight.Medium,
-            color = colorScheme.onSurface
-        )
-        Text(
-            text = content,
-            fontSize = MiuixTheme.textStyles.body2.fontSize,
-            color = colorScheme.onSurfaceVariantSummary,
-            modifier = Modifier.padding(top = 2.dp, bottom = bottomPadding)
-        )
-    }
-
-    Card {
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(16.dp)
-        ) {
-            InfoText(
-                title = stringResource(R.string.home_app_version),
-                content = systemInfo.appVersion,
-                bottomPadding = 0.dp
-            )
         }
     }
 }

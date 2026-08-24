@@ -5,7 +5,7 @@ import okhttp3.Request
 
 fun checkNewVersion(): LatestVersionInfo {
     if (!isNetworkAvailable(templateApp)) return LatestVersionInfo()
-    val url = "https://api.github.com/repos/chenaizhang/KernelSU-Style-UI-Kit/releases/latest"
+    val url = "https://api.github.com/repos/chenaizhang/aqzlgj-kotlin/releases/latest"
     // default null value if failed
     val defaultValue = LatestVersionInfo()
     runCatching {

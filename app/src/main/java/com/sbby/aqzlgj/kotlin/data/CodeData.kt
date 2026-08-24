@@ -5,6 +5,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 object CodeData {
+    const val CATEGORY_MIX = "大杂烩"
+
     private var allCodes: List<CodeItem>? = null
 
     suspend fun loadCodes(context: Context): List<CodeItem> = withContext(Dispatchers.IO) {
@@ -50,5 +52,5 @@ object CodeData {
     private fun isMetaLine(title: String): Boolean =
         title == "声明" || title.startsWith("发现bug") || title == "此应用由是白白吖独立制作"
 
-    fun getCategories(): List<String> = listOf("刀皮类", "战术装备", "钥匙类", "针剂类", "操作指令", "大杂烩")
+    fun getCategories(): List<String> = listOf("刀皮类", "战术装备", "钥匙类", "针剂类", "操作指令", CATEGORY_MIX)
 }

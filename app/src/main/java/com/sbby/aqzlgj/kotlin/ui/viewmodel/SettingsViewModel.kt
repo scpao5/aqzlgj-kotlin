@@ -37,6 +37,8 @@ class SettingsViewModel(
             val colorStyle = repo.colorStyle
             val colorSpec = repo.colorSpec
             val uiMode = repo.uiMode
+            val hideToast = repo.hideToast
+            val hideUpdateDialog = repo.hideUpdateDialog
 
             _uiState.update {
                 it.copy(
@@ -52,6 +54,8 @@ class SettingsViewModel(
                     pageScale = pageScale,
                     colorStyle = colorStyle,
                     colorSpec = colorSpec,
+                    hideToast = hideToast,
+                    hideUpdateDialog = hideUpdateDialog,
                 )
             }
         }
@@ -159,6 +163,16 @@ class SettingsViewModel(
     fun setPageScale(scale: Float) {
         repo.pageScale = scale
         _uiState.update { it.copy(pageScale = scale) }
+    }
+
+    fun setHideToast(enabled: Boolean) {
+        repo.hideToast = enabled
+        _uiState.update { it.copy(hideToast = enabled) }
+    }
+
+    fun setHideUpdateDialog(enabled: Boolean) {
+        repo.hideUpdateDialog = enabled
+        _uiState.update { it.copy(hideUpdateDialog = enabled) }
     }
 
 }

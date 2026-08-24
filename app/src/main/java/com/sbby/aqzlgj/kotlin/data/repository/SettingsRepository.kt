@@ -13,4 +13,6 @@ interface SettingsRepository {
     var enableFloatingBottomBar: Boolean
     var enableFloatingBottomBarBlur: Boolean
     var pageScale: Float
+    var hideToast: Boolean
+    var hideUpdateDialog: Boolean
 }

@@ -27,6 +27,7 @@ import kotlinx.coroutines.withContext
 import com.sbby.aqzlgj.kotlin.BuildConfig
 import com.sbby.aqzlgj.kotlin.R
 import com.sbby.aqzlgj.kotlin.ui.component.dialog.LoadingDialogHandle
+import com.sbby.aqzlgj.kotlin.ui.util.AppToast
 import com.sbby.aqzlgj.kotlin.ui.util.getBugreportFile
 import top.yukonga.miuix.kmp.basic.Icon
 import top.yukonga.miuix.kmp.basic.Text
@@ -61,7 +62,7 @@ fun SendLogDialog(
             }
             loadingDialog.hide()
             withContext(Dispatchers.Main) {
-                Toast.makeText(context, logSavedText, Toast.LENGTH_SHORT).show()
+                AppToast.show(context, logSavedText)
             }
         }
     }
@@ -93,7 +94,7 @@ fun SendLogDialog(
                 onClick = {
                     val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH_mm")
                     val current = LocalDateTime.now().format(formatter)
-                    exportBugreportLauncher.launch("KernelSUStyleUIKit_bugreport_${current}.txt.gz")
+                    exportBugreportLauncher.launch("aqzlgj_kotlin_bugreport_${current}.txt.gz")
                     onDismissRequest()
                 },
                 insideMargin = PaddingValues(horizontal = 24.dp, vertical = 12.dp)

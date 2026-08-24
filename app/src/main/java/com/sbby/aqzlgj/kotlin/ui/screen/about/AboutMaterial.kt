@@ -1,6 +1,5 @@
 package com.sbby.aqzlgj.kotlin.ui.screen.about
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
@@ -28,7 +27,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.sbby.aqzlgj.kotlin.R
@@ -78,12 +76,6 @@ fun AboutScreenMaterial(
                         .padding(vertical = 48.dp),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.ic_logo),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(80.dp)
-                    )
                     Text(
                         modifier = Modifier.padding(top = 12.dp),
                         text = state.appName,

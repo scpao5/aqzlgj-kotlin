@@ -17,6 +17,8 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.BugReport
 import androidx.compose.material.icons.rounded.ContactPage
 import androidx.compose.material.icons.rounded.Dashboard
+import androidx.compose.material.icons.rounded.NotificationsOff
+import androidx.compose.material.icons.rounded.UpdateDisabled
 import androidx.compose.material.icons.rounded.Palette
 import androidx.compose.material.icons.rounded.Update
 import androidx.compose.runtime.Composable
@@ -109,6 +111,41 @@ fun SettingPagerMiuix(
                             },
                             checked = uiState.checkUpdate,
                             onCheckedChange = actions.onSetCheckUpdate
+                        )
+                    }
+
+                    Card(
+                        modifier = Modifier
+                            .padding(top = 12.dp)
+                            .fillMaxWidth(),
+                    ) {
+                        SwitchPreference(
+                            title = "隐藏 Toast 提示",
+                            summary = "开启后不再弹出 Toast 提示",
+                            startAction = {
+                                Icon(
+                                    Icons.Rounded.NotificationsOff,
+                                    modifier = Modifier.padding(end = 6.dp),
+                                    contentDescription = "隐藏 Toast 提示",
+                                    tint = colorScheme.onBackground
+                                )
+                            },
+                            checked = uiState.hideToast,
+                            onCheckedChange = actions.onSetHideToast
+                        )
+                        SwitchPreference(
+                            title = "隐藏更新弹窗",
+                            summary = "开启后不再提示应用更新",
+                            startAction = {
+                                Icon(
+                                    Icons.Rounded.UpdateDisabled,
+                                    modifier = Modifier.padding(end = 6.dp),
+                                    contentDescription = "隐藏更新弹窗",
+                                    tint = colorScheme.onBackground
+                                )
+                            },
+                            checked = uiState.hideUpdateDialog,
+                            onCheckedChange = actions.onSetHideUpdateDialog
                         )
                     }
 

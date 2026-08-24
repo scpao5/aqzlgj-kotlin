@@ -19,6 +19,8 @@ data class SettingsUiState(
     val enableFloatingBottomBar: Boolean = true,
     val enableFloatingBottomBarBlur: Boolean = true,
     val pageScale: Float = 1.0f,
+    val hideToast: Boolean = false,
+    val hideUpdateDialog: Boolean = false,
 )
 
 @Immutable
@@ -27,4 +29,6 @@ data class SettingsScreenActions(
     val onOpenTheme: () -> Unit,
     val onSetUiModeIndex: (Int) -> Unit,
     val onOpenAbout: () -> Unit,
+    val onSetHideToast: (Boolean) -> Unit,
+    val onSetHideUpdateDialog: (Boolean) -> Unit,
 )

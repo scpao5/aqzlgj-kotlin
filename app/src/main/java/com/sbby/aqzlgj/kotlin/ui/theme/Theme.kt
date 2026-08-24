@@ -98,10 +98,16 @@ fun TemplateTheme(
     val currentAppSettings = appSettings ?: ThemeController.getAppSettings(context)
 
     when (uiMode) {
-        UiMode.Miuix -> MiuixTemplateTheme(
-            appSettings = currentAppSettings,
-            content = content
-        )
+        UiMode.Miuix -> {
+            // Miuix 模式下同时提供 Material3 主题：
+            // 保证混用的 Material3 组件（分类页/搜索页等）跟随应用的配色方案
+            MaterialTemplateTheme(appSettings = currentAppSettings) {
+                MiuixTemplateTheme(
+                    appSettings = currentAppSettings,
+                    content = content
+                )
+            }
+        }
 
         UiMode.Material -> MaterialTemplateTheme(
             appSettings = currentAppSettings,
