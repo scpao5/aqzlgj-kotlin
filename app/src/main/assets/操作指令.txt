@@ -1,0 +1,45 @@
+农场|open Farmland_715_Main
+旧山谷|open Valley_715_Main
+新山谷|open Valley_Main
+北部山区|open Lake_Main
+庭院|open DE_Yard_Main
+前线要塞|open Armory_Main
+电视台|open TVStation_Main
+军港|open CitySiege_Main
+矿区|open Breakout_Main
+旧训练场|open TutorialRange_Main
+新训练场|open Range_Main
+大厅主界面|open FrontEndMap?goto=hallroom
+AI测试地图|open Uam-AITest-WhiteFilm
+模式测试地图|open Uam-ModeLogicTest
+战斗测试地图|open Uam-BattleTest
+模型测试地图|open Uam-LDTestModel
+飞行模式|Fly
+幽灵模式|ghost
+取消飞行/取消幽灵模式|walk
+人物大小|ChangeSize 100
+自身无敌|god
+全员无敌|gods
+准星传送|Teleport
+准心销毁|DestroyTarget
+人物加速|slomo 5
+视野大小|fov 100
+调整天气为晴天|DebugSetWeather 0
+调整天气为雨天|DebugSetWeather 1
+调整为黑夜|DebugSetWeather 3
+开启自由视角|ToggleDebugCamera
+无后坐力|ToggleBulletRecoil 0
+1/3人称切换|ToggleCamera
+绿车（有钥匙）|SpawnVehicle MiningT1
+红车（有钥匙）|SpawnVehicle 1 MiningT1
+灰车（没钥匙）|SpawnVehicle 2 MiningT1
+绿车（有钥匙）|SpawnVehicle T1Pickup
+红车（有钥匙）|SpawnVehicle 1 AMV-110
+绿车（有钥匙）|SpawnVehicle 0
+红车（有钥匙）|SpawnVehicle 1
+灰车（没钥匙）|SpawnVehicle 2
+生成特遣复制体|summon BP_UamCharacter_C
+生成特遣人机|summon BP_UamAICharacter_C
+生成乔尔教官（仅旧训练场可刷新）|summon BP_Tutorials_Coach_Custom_C
+结束游戏进程|Exit
+跳过DLC|skipdlc

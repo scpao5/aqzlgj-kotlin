@@ -1,0 +1,889 @@
+机密文件|GiveWeapon 408080027
+理想国|GiveItem 408080040 1 0 0
+盛宴雕塑|GiveItem 408080039 1 0 0
+宝石项链|GiveWeapon 408080029
+目标定位模块|GiveWeapon 019
+金狮子|GiveWeapon lion
+茶壶|GiveWeapon teapot
+周大福项链|GiveWeapon 801
+好运红包|GiveWeapon 804
+地图（废案）|GiveWeapon map
+货单|GiveWeapon document
+传说狗牌|GiveWeapon 999
+维修手册|GiveWeapon Intelligence
+作战指南针|GiveWeapon  813
+大型扩展箱|GiveWeapon item
+宫廷银器|GiveWeapon china
+前线要塞凭证（废案）|GiveWeapon 815
+工作日志|GiveWeapon 900
+食品保鲜箱|GiveWeapon nick
+暗区情报|GiveWeapon anqu
+测温计|GiveWeapon 014
+医用棉球|GiveWeapon 015
+破旧书籍|GiveWeapon 016
+手表芯片|GiveWeapon jx
+宝剑塔罗牌|GiveWeapon done
+马刺|GiveWeapon 408080022
+天线|GiveWeapon810
+液压扳手|GiveWeapon805
+数据连接线|GiveWeapon 814
+首领通行证|GiveWeapon 408150004
+农场特殊通行证|GiveWeapon 408150003
+保卫队队长证|GiveWeapon 408150005
+金链|GiveWeapon 408080023
+金块|GiveWeapon 408080024
+钻戒|GiveWeapon 408080025
+胸针|GiveWeapon 408080026
+金魔方|GiveWeapon 408080028
+金杯|GiveWeapon 408080030
+专用电池组|GiveItem 408040005 2 0 0
+暗区大鹅|GiveItem 408990032 1 0 0
+暗区金兔|GiveItem 408990045 1 0 0
+暗区招|GiveItem 408990050 1 0 0
+闪闪招|GiveItem 408990051 1 0 0
+一键三连奖|GiveItem 408990085 1 0 0
+洛天依手办|GiveItem 408990091 1 0 0
+小猪妖手办|GiveItem 408990092 1 0 0
+黄金战盔|GiveItem 408990065 1 0 0
+白银战盔|GiveItem 408990066 1 0 0
+农场相片·慌不择路|GiveWeapon 0089
+教官单挂|GiveWeapon fc
+al突击单挂甲|GiveWeapon rolf
+治安官重型|GiveWeapon 6b43
+6b45重型|GiveWeapon ab
+斯巴达B型|GiveWeapon 6b13
+b6单挂|GiveWeapon mk3
+6b5单挂甲|GiveWeapon 6b3
+斯巴达C|GiveWeapon 6b5
+战神头|GiveWeapon F70
+三级头|GiveWeapon 6b4
+PM-R弹挂甲|GiveWeapon fred
+ind四级|GiveWeapon rf
+03重|GiveWeapon 800
+博雷罗手表|GiveWeapon wm
+野战登山包|GiveWeapon kj
+勇士弹挂甲|GiveWeapon lk
+KN复活甲|GiveWeapon 094
+bt201大白鹅|GiveWeapon 201
+野营背囊|GiveWeapon sf
+防毒面具|GiveWeapon s10
+星空户外包|GiveWeapon yellow
+fa指挥官|GiveWeapon black
+b3通用|GiveWeapon Command
+luc背包|GiveWeapon 118
+迷彩奔尼帽（废案）|GiveWeapon 01
+无畏者3单挂（废案）|GiveWeapon kv
+尖顶骑兵帽（废案）|GiveWeapon vk
+冬日登山背包|GiveWeapon yr
+马斯卡2|GiveWeapon ys
+MK3信号枪|GiveItem 102010014 1 0 0
+MCX|GiveWeapon mc
+MPX|GiveWeapon sek
+AK102|GiveWeapon 0
+uzi|GiveWeapon uzi
+狗砸|GiveWeapon gr
+s12k|GiveWeapon ai
+ADAR步枪（废案）|GiveWeapon ADAR
+m110|GiveWeapon 25
+M300|GiveWeapon 300
+沙漠之鹰 黄金|GiveWeapon gold
+沙漠之鹰 银色|GiveWeapon se
+妹控+热瞄|GiveWeapon mk
+ar30|GiveWeapon 30
+g18c|GiveWeapon 18c
+g17（50发弹鼓）|GiveWeapon lo
+随机投掷物发射器|GiveWeapon il
+hunter（内测枪）|GiveWeapon un
+H416|GiveWeapon bp
+黄金沙鹰|GiveWeapon go
+QC61|GiveWeapon 61
+7.62×51 M61|GiveWeapon m61
+7.62×39 HP|GiveWeapon hp
+9×39 PAB|GiveWeapon ab
+26.5mm红色信号枪子弹|Giveitem 202180001 1 0 0
+26.5mm黄色信号枪子弹|Giveitem 202180002 1 0 0
+26.5mm绿色信号枪子弹|Giveitem 202180003 1 0 0
+阔剑|GiveWeapon ym
+伯纳德震撼弹|GiveWeapon nl
+烟雾弹|GiveWeapon ke
+脚步发声器|GiveWeapon oo
+进攻|GiveWeapon ff
+菠萝雷|GiveWeapon ii
+科特c4|GiveWeapon c4
+boss震撼弹|GiveWeapon 3b
+彩球手榴弹|GiveWeapon no
+T13手榴弹|GiveItem 104110001 1 0 0
+芒果汁|GiveWeapon juice
+保温壶|GiveWeapon aq
+菠萝汁|GiveWeapon aj
+甜面酱|GiveWeapon sq
+水|GiveWeapon water
+红花油（废案）|GiveWeapon vase
+炼奶|GiveWeapon dm
+ap止痛药|GiveWeapon gm
+山谷特调|GiveWeapon yd
+姜饼|GiveWeapon bread
+乐虎饮料|GiveWeapon tiger
+sjhp子弹|GiveWeapon jh
+mg3的100发弹匣（废案）|GiveWeapon m13
+回归安全箱|GiveWeapon iu
+两格安全箱|GiveWeapon ji
+六格安全箱|GiveWeapon kc
+九格安全箱|GiveWeapon yi
+装甲安全箱|GiveWeapon gx
+c栋休闲室包间|GiveWeapon Private
+somi冲锋枪|GiveWeapon uo
+vpo瞄具（废案）|GiveWeapon hunter
+斜握把|GiveWeapon b25
+轻便前握把|GiveWeapon ft
+高级急救包|GiveWeapon Medical
+防弹盾牌|GiveWeapon li
+四倍全息|GiveWeapon amr
+口袋|GiveWeapon pocket
+vpo101防尘盖（废案）|GiveWeapon 101
+二倍红点（废案）|GiveWeapon red
+蓝紫镭射|GiveWeapon purple
+维克托手电（废案）|GiveWeapon hl
+二倍率准镜（废案）|GiveWeapon lu
+倍镜|GiveWeapon cat
+mk3|GiveWeapon la
+飞行眼镜|GiveWeapon fly
+大型枪械盒|GiveWeapon ox
+南瓜纪念币|GiveWeapon 78
+AK74新手三十发弹匣|GiveWeapon full
+防爆盾|GiveWeapon ba
+狩猎马甲|GiveWeapon av
+神秘头饰|GiveWeapon D01
+声纹干扰器|Giveitem 104140002 1 0 0
+信号扫描仪|Giveitem 104140003 1 0 0
+玩乐用冲击手榴弹(hj)|GiveItem 104140004 1 0 0
+彩蛋扫描仪|Giveitem 104140005 1 0 0
+情报扫描仪|Giveitem 104140006 1 0 0
+头痛到爆|Giveitem 104190001 1 0 0
+奇葩手雷|Giveitem 701029998 1 0 0
+速效止痛药|GiveItem 401010001 1 0 0
+特效止痛药|GiveItem 401010002 1 0 0
+AP镇痛片|GiveItem 401010003 1 0 0
+消炎止痛药|GiveItem 401010005 1 0 0
+浓缩镇痛剂|GiveItem 401010007 1 0 0
+提神口服液|GiveItem 401010008 1 0 0
+军用急救包|GiveItem 401040001 1 0 0
+E3医疗包|GiveItem 401040005 1 0 0
+简易急救盒|GiveItem 401040006 1 0 0
+926急救包|GiveItem 401040008 1 0 0
+400D急救包|GiveItem 401040009 1 0 0
+STO急救|GiveItem 401040010 1 0 0
+TMK野战包|GiveItem 401040011 1 0 0
+高级急救包|GiveItem 401040012 1 0 0
+简易手术袋|GiveItem 401030201 1 0 0
+标准手术包|GiveItem 401030202 1 0 0
+TMK手术包|GiveItem 401030203 1 0 0
+STO手术包|GiveItem 401030204 1 0 0
+STO手术袋|GiveItem 401030205 1 0 0
+TSM手术套组|GiveItem 401030206 1 0 0
+应急自救包|GiveItem 401030207 1 0 0
+吸入器|GiveItem 401030301 1 0 0
+幸运丸子|GiveWeapon luc
+红烧排骨|GiveItem 404020001 1 0 0
+罐装炖肉|GiveItem 404020002 1 0 0
+锅巴|GiveItem 404020003 1 0 0
+鲮鱼罐头|GiveItem 404020004 1 0 0
+炖肉罐头|GiveItem 404020005 1 0 0
+鲱鱼罐头|GiveItem 404020006 1 0 0
+饼干|GiveItem 404020007 1 0 0
+炼奶|GiveItem 404020008 1 0 0
+能量棒|GiveItem 404020009 1 0 0
+红阳砂糖|GiveItem 404020010 1 0 0
+原味薯片|GiveItem 404020011 1 0 0
+黄瓜味薯片|GiveItem 404020012 1 0 0
+腌鱼罐头|GiveItem 404020013 1 0 0
+焗豆罐头|GiveItem 404020014 1 0 0
+玉米片|GiveItem 404020015 1 0 0
+甜面酱|GiveItem 404020016 1 0 0
+达荣能量棒|GiveItem 404020017 1 0 0
+干粮|GiveItem 404020018 1 0 0
+蜂蜜|GiveItem 404020019 1 0 0
+姜饼|GiveItem 404020020 1 0 0
+番茄薯片|GiveItem 404020021 1 0 0
+纯切薯片|GiveItem 404020022 1 0 0
+花颜薯片|GiveItem 404020023 1 0 0
+弯曲薯片|GiveItem 404020024 1 0 0
+黑橙巧克力|GiveItem 404020025 1 0 0
+美味杂烩锅|GiveItem 404020026 1 0 0
+精制甜面酱|GiveItem 404020029 1 0 0
+金色月饼|GiveItem 404020030 1 0 0
+神秘月饼|GiveItem 404020032 1 0 0
+披萨|GiveItem 404020033 1 0 0
+怪味奶糖|GiveItem 404020038 1 0 0
+特浓炼乳|GiveItem 404020037 1 0 0
+香酥饼干|GiveItem 404020036 1 0 0
+美味火锅|GiveItem 404020026 1 0 0
+香浓巧克力|GiveItem 404020039 1 0 0
+山泉水|GiveItem 404010001 1 0 0
+苹果汁|GiveItem 404010002 1 0 0
+柠檬饮料|GiveItem 404010003 1 0 0
+芒果汁|GiveItem 404010004 1 0 0
+菠萝汁|GiveItem 404010005 1 0 0
+牛磺酸|GiveItem 404010006 1 0 0
+碳酸汽水|GiveItem 404010007 1 0 0
+保温壶|GiveItem 404010008 1 0 0
+橙汁（pin）|GiveItem 404010009 1 0 0
+牛奶|GiveItem 404010010 1 0 0
+功能饮料|GiveItem 404010011 1 0 0
+朗姆饮料|GiveItem 404010012 1 0 0
+山谷特调|GiveItem 404010013 1 0 0
+冰爽汽水|GiveItem 404010014 1 0 0
+乐虎饮料|GiveItem 404010015 1 0 0
+维奥预制|GiveItem 404010016 1 0 0
+嘉年华特调|GiveItem 404010017 1 0 0
+阔剑（104140001）|GiveWeapon ym
+伯纳德震撼弹（104100001）|GiveWeapon nl
+烟雾（104020001）|GiveWeapon ke
+脚发（104060001）|GiveWeapon oo
+进攻（104080001）|GiveWeapon ff
+MK2（104090001）|GiveWeapon ii
+普通震撼弹|GiveWeapon ng
+科特c4（104120001）|GiveWeapon c4
+boss震撼弹（202160009）|GiveWeapon 3b
+随机投掷物发射器（103010099）|GiveWeapon il
+防弹盾（101090001）|GiveWeapon li或sh
+科恩币|GiveItem 403010001 1 0 0
+高级科恩币|GiveItem 403020001 1 0 0
+简易安全箱（9格）|GiveItem 301090001 1 0 0
+加固安全箱（2格）|GiveItem 301090002 1 0 0
+抗震安全箱（4格）|GiveItem 301090003 1 0 0
+防弹安全箱（4格）|GiveItem 301090004 1 0 0
+防爆安全箱（6格）|GiveItem 301090005 1 0 0
+复合安全箱（6格）|GiveItem 301090006 1 0 0
+装甲安全箱（12格）|GiveItem 301090007 1 0 0
+防暴头盔|GiveItem 301040001 1 0 0
+飞行员头盔|GiveItem 301040002 1 0 0
+PAS2头盔|GiveItem 301040003 1 0 0
+F80头盔|GiveItem 301040004 1 0 0
+6BNT头盔|GiveItem 301040005 1 0 0
+HG84特攻头盔|GiveItem 301040006 1 0 0
+6B4头盔|GiveItem 301040007 1 0 0
+DOD9防爆头盔|GiveItem 301040008 1 0 0
+F70头盔|GiveItem 301040009 1 0 0
+FA突击盔|GiveItem 301040010 1 0 0
+IND50重型头盔|GiveItem 301040011 1 0 0
+IND战术头盔|GiveItem 301040012 1 0 0
+SH18头盔（白狼头）|GiveItem 301040013 1 0 0
+AS200重型头盔（飞鱼头）|GiveItem 301040014 1 0 0
+安保头盔|GiveItem 301040015 1 0 0
+6B5头盔|GiveItem 301040016 1 0 0
+PAS头盔|GiveItem 301040017 1 0 0
+KSS战术盔|GiveItem 301040018 1 0 0
+摩托车头盔|GiveItem 301040019 1 0 0
+坦克兵帽子|GiveItem 301040020 1 0 0
+老式钢盔|GiveItem 301040021 1 0 0
+SH12头盔|GiveItem 301040022 1 0 0
+SH40头盔|GiveItem 301040023 1 0 0
+KSS2战术盔|GiveItem 301040024 1 0 0
+IND200头盔|GiveItem 301040025 1 0 0
+03重型盔|GiveItem 301040026 1 0 0
+RSP重装盔|GiveItem 301040027 1 0 0
+SH50头盔|GiveItem 301040028 1 0 0
+SH马斯卡2|GiveItem 301040029 1 0 0
+6B4小队（杰克逊盔）|GiveItem 301040030 1 0 0
+安全头盔|GiveItem 301040031 1 0 0
+SH65头盔|GiveItem 301040032 1 0 0
+SH60头盔|GiveItem 301040033 1 0 0
+RST特种盔|GiveItem 301040034 1 0 0
+IND70战术（战神头）|GiveItem 301040035 1 0 0
+AN95头盔|GiveItem 301040036 1 0 0
+消防头盔|GiveItem 301040037 1 0 0
+56K飞行盔|GiveItem 301040038 1 0 0
+老式头盔|GiveItem 301040040 1 0 0
+IND雪山|GiveItem 301040041 1 0 0
+防暴头盔|GiveItem 301040042 1 0 0
+卡内贡头套|GiveItem 301040059 1 0 0
+巴尔坦头盔|GiveItem 301040058 1 0 0
+T7热成像|GiveItem 301120001 1 0 0
+RAL全面罩|GiveItem 301150201 1 0 0
+RAL10通用|GiveItem 301150202 1 0 0
+SH3面具|GiveItem 301150203 1 0 0
+SH4面具|GiveItem 301150204 1 0 0
+RAL40高级|GiveItem 301150205 1 0 0
+RAL20野外|GiveItem 301150206 1 0 0
+RAL大目镜|GiveItem 301150207 1 0 0
+220型防弹衣|GiveItem 301060001 1 0 0
+SEK堡垒|GiveItem 301060003 1 0 0
+HLC战术|GiveItem 301060004 1 0 0
+治安官重型|GiveItem 301060006 1 0 0
+HTac特勤甲|GiveItem 301060007 1 0 0
+HLC轻型|GiveItem 301060009 1 0 0
+BT6重型|GiveItem 301060010 1 0 0
+BT101|GiveItem 301060011 1 0 0
+标准特勤甲|GiveItem 301060012 1 0 0
+6B23防弹|GiveItem 301060013 1 0 0
+IMTV标准甲|GiveItem 301060014 1 0 0
+IMTV攻击甲|GiveItem 301060015 1 0 0
+IMTV全面甲|GiveItem 301060016 1 0 0
+926复合|GiveItem 301060017 1 0 0
+斯巴达B型|GiveItem 301060018 1 0 0
+旧安保防弹|GiveItem 301060019 1 0 0
+防卫M4重型|GiveItem 301060020 1 0 0
+防弹马甲|GiveItem 301060021 1 0 0
+防卫L4重装|GiveItem 301060022 1 0 0
+安保防弹衣|GiveItem 301060023 1 0 0
+6B13防弹|GiveItem 301060024 1 0 0
+KN突击甲|GiveItem 301060025 1 0 0
+KN复合甲|GiveItem 301060026 1 0 0
+6B45重型|GiveItem 301060027 1 0 0
+PCA350|GiveItem 301060028 1 0 0
+401防弹|GiveItem 301060029 1 0 0
+工兵防弹甲|GiveItem 301060030 1 0 0
+老式防弹衣|GiveItem 301060031 1 0 0
+BT201|GiveItem 301060032 1 0 0
+狩猎马甲|GiveItem 301010101 1 0 0
+ALS弹挂|GiveItem 301010102 1 0 0
+BH胸挂|GiveItem 301010103 1 0 0
+BH2胸挂|GiveItem 301010104 1 0 0
+冲锋手2型|GiveItem 301010105 1 0 0
+B6战术|GiveItem 301010106 1 0 0
+926猎手|GiveItem 301010107 1 0 0
+B4战术|GiveItem 301010108 1 0 0
+926轻型|GiveItem 301010109 1 0 0
+RAP简易|GiveItem 301010110 1 0 0
+FA指挥官|GiveItem 301010111 1 0 0
+FA多功能|GiveItem 301010112 1 0 0
+B3通用|GiveItem 301010113 1 0 0
+冲锋手3型|GiveItem 301010114 1 0 0
+冲锋手4型|GiveItem 301010115 1 0 0
+926高级|GiveItem 301010116 1 0 0
+勤务背心|GiveItem 301010117 1 0 0
+朋克背心|GiveItem 301010118 1 0 0
+牛皮背心|GiveItem 301010119 1 0 0
+Lifchik弹挂（新手关乔尔挂）|GiveItem 301010120 1 0 0
+926猎枭|GiveItem 301010122 1 0 0
+冲锋手4C|GiveItem 301010124 1 0 0
+B3护卫|GiveItem 301010125 1 0 0
+B3战术|GiveItem 301010126 1 0 0
+帆布背包|GiveItem 301020001 1 0 0
+简易背包|GiveItem 301020002 1 0 0
+轻型登山包|GiveItem 301020003 1 0 0
+中型登山包|GiveItem 301020004 1 0 0
+户外旅行包|GiveItem 301020005 1 0 0
+XA4战术包|GiveItem 301020006 1 0 0
+926背包|GiveItem 301020007 1 0 0
+野战登山包|GiveItem 301020008 1 0 0
+简易挎包|GiveItem 301020009 1 0 0
+LUC扩容包|GiveItem 301020010 1 0 0
+运动背囊|GiveItem 301020011 1 0 0
+野营背囊|GiveItem 301020012 1 0 0
+查普曼军用|GiveItem 301020013 1 0 0
+Med野战包|GiveItem 301020014 1 0 0
+AMP突击包|GiveItem 301020015 1 0 0
+RUSH战术包|GiveItem 301020016 1 0 0
+RAL军用包|GiveItem 301020017 1 0 0
+牛皮背包|GiveItem 301020018 1 0 0
+大型登山包|GiveItem 301020019 1 0 0
+老式行军包|GiveItem 301020020 1 0 0
+星空户外包|GiveItem 301020024 1 0 0
+冬日登山背包|GiveItem 301020026 1 0 0
+老旧口袋背包|GiveItem 301020027 1 0 0
+速递双肩包|GiveItem 301020028 1 0 0
+速递包（绿色）|Giveitem 301020028 1 0 0
+天猫显眼背囊|GiveItem 301020029 1 0 0
+一键三连背包|GiveItem 301020030 1 0 0
+下次一定背包|GiveItem 301020031 1 0 0
+2333背包|GiveItem 301020032 1 0 0
+Com1耳机|GiveItem 301030002 1 0 0
+M32耳机|GiveItem 301030004 1 0 0
+Z038耳机|GiveItem 301030005 1 0 0
+GS2耳机|GiveItem 301030006 1 0 0
+指挥官耳机|GiveItem 301030007 1 0 0
+降噪耳机（废案）|GiveWeapon head
+AKM|GiveItem 101010001 1 0 0
+M4A1|GiveItem 101010002 1 0 0
+FAL|GiveItem 101010003 1 0 0
+MDR|GiveItem 101010005 1 0 0
+AK102|GiveItem 101010006 1 0 0
+AK74N|GiveItem 101010008 1 0 0
+AKS74U|GiveItem 101010009 1 0 0
+AUG|GiveItem 101010010 1 0 0
+F2000|GiveItem 101010011 1 0 0
+AR57|GiveItem 101010012 1 0 0
+ACE31|GiveItem 101010013 1 0 0
+AEK|GiveItem 101010014 1 0 0
+AN94|GiveItem 101010015 1 0 0
+Groza|GiveItem 101010016 1 0 0
+FAMAS|GiveItem 101010017 1 0 0
+SCAR-L|GiveItem 101010018 1 0 0
+T951|GiveItem 101010019 1 0 0
+T03|GiveItem 101010020 1 0 0
+MP5|GiveItem 101020001 1 0 0
+MPX|GiveItem 101020002 1 0 0
+P90|GiveItem 101020003 1 0 0
+UZI|GiveItem 101020004 1 0 0
+UMP45|GiveItem 101020005 1 0 0
+MP40|GiveItem 101020006 1 0 0
+MAC10|GiveItem 101020007 1 0 0
+M3A1|GiveItem 101020008 1 0 0
+T79|GiveItem 101020009 1 0 0
+QC61|GiveItem 101020010 1 0 0
+MPF45|GiveItem 101020011 1 0 0
+Vector45|GiveItem 101020012 1 0 0
+T85|GiveItem 101020013 1 0 0
+Vector9|GiveItem 101020014 1 0 0
+Suomi|GiveItem 101020015 1 0 0
+BIZON|GiveItem 101020016 1 0 0
+TS5|GiveItem 101020017 1 0 0
+SVDS|GiveItem 101030001 1 0 0
+VSS|GiveItem 101030002 1 0 0
+MK14|GiveItem 101030003 1 0 0
+M110|GiveItem 101030004 1 0 0
+莫辛|GiveItem 101040001 1 0 0
+AX50|GiveItem 101040002 1 0 0
+AR30|GiveItem 101040003 1 0 0
+SJ16|GiveItem 101040004 1 0 0
+M24|GiveItem 101040005 1 0 0
+RPK16|GiveItem 10105001 1 0 0
+M870|GiveItem 101060001 1 0 0
+MP133|GiveItem 101060002 1 0 0
+S12K|GiveItem 101060003 1 0 0
+USAS12|GiveItem 101060004 1 0 0
+SPR310|GiveItem 101060005 1 0 0
+DP12|GiveItem 101060006 1 0 0
+SKS|GiveItem 101080001 1 0 0
+ADAR|GiveItem 101080003 1 0 0
+M14|GiveItem 101080004 1 0 0
+M96|GiveItem 101080005 1 0 0
+Mini14|GiveItem 101080006 1 0 0
+SAM85M|GiveItem 101080007 1 0 0
+BM59|GiveItem 101080008 1 0 0
+SVTU|GiveItem 101080009 1 0 0
+M16|GiveItem 101080010 1 0 0
+G17|GiveItem 102010001 1 0 0
+M9A3|GiveItem 102010002 1 0 0
+G18C|GiveItem 102010003 1 0 0
+MP9|GiveItem 102010004 1 0 0
+沙漠之鹰|GiveItem 102010005 1 0 0
+T54|GiveItem 102010006 1 0 0
+T05|GiveItem 102010007 1 0 0
+M1911|GiveItem 102010008 1 0 0
+M45A1|GiveItem 102010009 1 0 0
+黄金沙鹰|GiveItem 102010010 1 0 0
+CZ52|GiveItem 102010011 1 0 0
+F57|GiveItem 102010012 1 0 0
+M300|GiveItem 102010013 1 0 0
+MK3|GiveItem 102010014 1 0 0
+4倍镜|GiveItem 201030201 1 0 0
+3倍全息镜|GiveItem 201020202 1 0 0
+莫辛3.5倍镜|GiveItem 201020203 1 0 0
+3.5倍镜|GiveItem 201020204 1 0 0
+1/4倍镜|GiveItem 201020205 1 0 0
+4倍全息|GiveItem 201020206 1 0 0
+PSO4倍镜|GiveItem 201020207 1 0 0
+PZ3热成像|GiveItem 201020208 1 0 0
+3倍镜|GiveItem 201020209 1 0 0
+经典红点|GiveItem 201030101 1 0 0
+经典全息|GiveItem 201030102 1 0 0
+简易红点|GiveItem 201030103 1 0 0
+PK反射|GiveItem 201030104 1 0 0
+818反射|GiveItem 201030105 1 0 0
+三角反射|GiveItem 201030106 1 0 0
+紧凑反射|GiveItem 201030107 107 0 0
+553全息|GiveItem 201030108 1 0 0
+802反射|GiveItem 201030109 1 0 0
+OKP反射|GiveItem 201030110 1 0 0
+F2000瞄具|GiveItem 201030111 1 0 0
+AUG瞄具|GiveItem 201030112 1 0 0
+三角瞄具|GiveItem 201030115 1 0 0
+2倍瞄具|GiveItem 201030116 1 0 0
+战术红点|GiveItem 201030117 1 0 0
+PS6倍瞄具|GiveItem 201030301 1 0 0
+20倍镜|GiveItem 201030302 1 0 0
+6倍镜|GiveItem 201030303 1 0 0
+16倍镜|GiveItem 201030304 1 0 0
+7倍镜|GiveItem 201030305 1 0 0
+2.5/5倍镜|GiveItem 201030306 1 0 0
+4/10倍镜|GiveItem 201030307 1 0 0
+AK3.5倍镜|GiveItem 201030401 1 0 0
+折叠准星|GiveItem 201030601 1 0 0
+莫辛照门|GiveItem 201030602 1 0 0
+圆环导轨|GiveItem 201030603 1 0 0
+FAL照门|GiveItem 201030604 1 0 0
+AR标准照门|GiveItem 201030605 1 0 0
+AKM照门|GiveItem 201030606 1 0 0
+GFS准星|GiveItem 201030607 1 0 0
+GRS照门|GiveItem 201030608 1 0 0
+MP5照门|GiveItem 201030609 1 0 0
+AR提把照门|GiveItem 201030610 1 0 0
+SKS照门|GiveItem 201030611 1 0 0
+快速照门|GiveItem 201030612 1 0 0
+M9准星|GiveItem 201030613 1 0 0
+M9照门|GiveItem 201030614 1 0 0
+莫辛准星|GiveItem 201030615 1 0 0
+SVDS准星|GiveItem 201030616 1 0 0
+SVDS照门|GiveItem 201030617 1 0 0
+Hunter后瞄|GiveItem 201030618 1 0 0
+快速准星|GiveItem 201030619 1 0 0
+VSS照门|GiveItem 201030620 1 0 0
+SIG照门|GiveItem 201030621 1 0 0
+SIG准星|GiveItem 201030622 1 0 0
+GTFX准星|GiveItem 201030623 1 0 0
+GSE准星|GiveItem 201030624 1 0 0
+GTFX照门|GiveItem 201030625 1 0 0
+GSE照门|GiveItem 201030626 1 0 0
+AK多用照门|GiveItem 201030627 1 0 0
+M14U准星|GiveItem 201030628 1 0 0
+M14V准星|GiveItem 201030629 1 0 0
+M14照门|GiveItem 201030630 1 0 0
+AK轨照门|GiveItem 201030631 1 0 0
+OK照门|GiveItem 201030632 1 0 0
+大拇指准星|GiveItem 201030633 1 0 0
+RPK16照门|GiveItem 201030634 1 0 0
+S12K照门|GiveItem 201030635 1 0 0
+S12K导轨|GiveItem 201030636 1 0 0
+M1911准星|GiveItem 201030637 1 0 0
+M1911照门|GiveItem 201030638 1 0 0
+QC61准星|GiveItem 201030640 1 0 0
+QC61照门|GiveItem 201030641 1 0 0
+T85照门|GiveItem 201030642 1 0 0
+T85准星|GiveItem 201030643 1 0 0
+BM59照门|GiveItem 201030644 1 0 0
+SJ16准星|GiveItem 201030645 1 0 0
+SJ16照门|GiveItem 201030646 1 0 0
+F57准星|GiveItem 201030647 1 0 0
+F57照门|GiveItem 201030648 1 0 0
+M24准星|GiveItem 201030649 1 0 0
+M24照门|GiveItem 201030650 1 0 0
+ACE31准星|GiveItem 201030651 1 0 0
+ACE31照门|GiveItem 201030652 1 0 0
+Vector准星|GiveItem 201030653 1 0 0
+Vector照门|GiveItem 201030654 1 0 0
+D45斜准星|GiveItem 201030655 1 0 0
+D45斜照门|GiveItem 201030656 1 0 0
+AR15斜准星|GiveItem 201030657 1 0 0
+AR15斜照门|GiveItem 201030658 1 0 0
+Suomi照门|GiveItem 201030659 1 0 0
+SCAR-L准星|GiveItem 201030660 1 0 0
+SCAR-L照门|GiveItem 201030661 1 0 0
+BIZON照门|GiveItem 201030662 1 0 0
+BIZON准星|GiveItem 201030663 1 0 0
+vp0后喵|GiveWeapon hu
+经典全息|GiveWeapon ho
+AKM 40|GiveItem 201050001 1 0 0
+MP5 30|GiveItem 201050002 1 0 0
+MP5 50|GiveItem 201050003 1 0 0
+G 17|GiveItem 201050004 1 0 0
+G 33|GiveItem 201050005 1 0 0
+AR 30|GiveItem 201050006 1 0 0
+AR 60|GiveItem 201050007 1 0 0
+莫辛弹仓|GiveItem 201050008 1 0 0
+M870 4|GiveItem 201050009 1 0 0
+M870 7|GiveItem 201050010 1 0 0
+M870 10|GiveItem 201050011 1 0 0
+FAL 50|GiveItem 201050012 1 0 0
+FAL 20|GiveItem 201050013 1 0 0
+AK 30|GiveItem 201050014 1 0 0
+SKS 10|GiveItem 201050015 1 0 0
+MPX 30|GiveItem 201050016 1 0 0
+M9A3 17|GiveItem 201050017 1 0 0
+P90 50|GiveItem 201050018 1 0 0
+P90 30|GiveItem 201050019 1 0 0
+SVDS 10|GiveItem 201050020 1 0 0
+SVDS 20|GiveItem 201050021 1 0 0
+MP133 6|GiveItem 201050022 1 0 0
+MP133 8|GiveItem 201050023 1 0 0
+Hunter 10|GiveItem 201050024 1 0 0
+Hunter 5|GiveItem 201050025 1 0 0
+AR 10聚合|GiveItem 201050026 1 0 0
+AR 20聚合|GiveItem 201050027 1 0 0
+AR 30聚合|GiveItem 201050028 1 0 0
+AR 40聚合|GiveItem 201050029 1 0 0
+VSS 10|GiveItem 201050030 1 0 0
+VSS 20|GiveItem 201050031 1 0 0
+VSS 30|GiveItem 201050032 1 0 0
+AK100 30|GiveItem 201050033 1 0 0
+AK100 30聚合|GiveItem 201050034 1 0 0
+莫辛 10|GiveItem 201050035 1 0 0
+SKS 20|GiveItem 201050036 1 0 0
+UZI 20|GiveItem 201050037 1 0 0
+G 50|GiveItem 201050038 1 0 0
+AK74 30|GiveItem 201050039 1 0 0
+AK74 60|GiveItem 201050040 1 0 0
+RPK 95|GiveItem 201050041 1 0 0
+M14 20|GiveItem 201050042 1 0 0
+M14 30|GiveItem 201050043 1 0 0
+MP9 32|GiveItem 201050044 1 0 0
+AKM 10|GiveItem 201050045 1 0 0
+AKM 75|GiveItem 201050046 1 0 0
+AKM 73|GiveItem 201050047 1 0 0
+AKM 50|GiveItem 201050048 1 0 0
+AR 60聚合|GiveItem 201050049 1 0 0
+AR 100|GiveItem 201050050 1 0 0
+MP5 20|GiveItem 201050051 1 0 0
+MPX 50|GiveItem 201050052 1 0 0
+MPX 41|GiveItem 201050053 1 0 0
+M96 10|GiveItem 201050054 1 0 0
+Mini14 10|GiveItem 201050055 1 0 0
+Mini14 20|GiveItem 201050056 1 0 0
+Mini14 30|GiveItem 201050057 1 0 0
+AX50 5|GiveItem 201050058 1 0 0
+AX50 10|GiveItem 201050059 1 0 0
+沙鹰 8|GiveItem 201050060 1 0 0
+S12K 20|GiveItem 201050061 1 0 0
+S12K 10|GiveItem 201050062 1 0 0
+S12K 5|GiveItem 201050063 1 0 0
+UMP45 25|GiveItem 201050064 1 0 0
+M110 10|GiveItem 201050065 1 0 0
+M110 20|GiveItem 201050066 1 0 0
+M110 20快速|GiveItem 201050067 1 0 0
+MK14 50|GiveItem 201050068 1 0 0
+T54 8|GiveItem 201050069 1 0 0
+M1911 7|GiveItem 201050071 1 0 0
+M1911 11|GiveItem 201050072 1 0 0
+M3A1 30|GiveItem 201050073 1 0 0
+F2000 50|GiveItem 201050074 1 0 0
+MP40 32|GiveItem 201050075 1 0 0
+MAC10 30|GiveItem 201050076 1 0 0
+T79 20|GiveItem 201050077 1 0 0
+T79 30|GiveItem 201050078 1 0 0
+SKS 35|GiveItem 201050079 1 0 0
+AUG 30|GiveItem 201050080 1 0 0
+AUG 42|GiveItem 201050081 1 0 0
+BM59 10|GiveItem 201050082 1 0 0
+BM59 20|GiveItem 201050083 1 0 0
+M45A1 7|GiveItem 201050084 1 0 0
+AK 10|GiveItem 201050085 1 0 0
+G 10|GiveItem 201050086 1 0 0
+M9A3 10|GiveItem 201050087 1 0 0
+UMP4515|GiveItem 201050088 1 0 0
+MAC10 15|GiveItem 201050089 1 0 0
+M3A1	15|GiveItem 201050090 1 0 0
+AK 100|GiveItem 201050091 1 0 0
+金鹰 8|GiveItem 201050092 1 0 0
+SVDS 20新手弹匣|GiveItem 201050093 1 0 0
+AK74 30新手弹匣|GiveItem 201050094 1 0 0
+QC61 20|GiveItem 201050095 1 0 0
+QC61 30|GiveItem 201050096 1 0 0
+MPF45 20|GiveItem 201050097 1 0 0
+MPF45 30|GiveItem 201050098 1 0 0
+VSS 50|GiveItem 201050099 1 0 0
+AUG 60|GiveItem 201050100 1 0 0
+UZI 32|GiveItem 201050101 1 0 0
+MP9 15|GiveItem 201050102 1 0 0
+BM59 5|GiveItem 201050103 1 0 0
+AK102 60|GiveItem 201050104 1 0 0
+FAL 30|GiveItem 201050105 1 0 0
+Vector45 30|GiveItem 201050106 1 0 0
+Vector45 50|GiveItem 201050107 1 0 0
+T85 30|GiveItem 201050108 1 0 0
+U12 10|GiveItem 201050109 1 0 0
+U12 20|GiveItem 201050110 1 0 0
+AR30 5|GiveItem 201050111 1 0 0
+SJ16 5|GiveItem 201050112 1 0 0
+SJ16 10|GiveItem 201050113 1 0 0
+Vector9 30|GiveItem 201050114 1 0 0
+Vector 50|GiveItem 201050115 1 0 0
+CZ52 8|GiveItem 201050116 1 0 0
+SVTU 5|GiveItem 201050117 1 0 0
+SVTU 10|GiveItem 201050118 1 0 0
+F57 10|GiveItem 201050119 1 0 0
+F57 20|GiveItem 201050120 1 0 0
+M24 5|GiveItem 201050121 1 0 0
+M24 10|GiveItem 201050122 1 0 0
+AN94 30|GiveItem 201050123 1 0 0
+Hunter 5|GiveItem 201050124 1 0 0
+MP5 30新手弹匣|GiveItem 201050125 1 0 0
+AR30 10|GiveItem 201050126 1 0 0
+BM59 20新手弹匣|GiveItem 201050127 1 0 0
+AKM 100|GiveItem 201050128 1 0 0
+AK 30观察|GiveItem 201050129 1 0 0
+AR 30观察|GiveItem 201050130 1 0 0
+Groza 20|GiveItem 201050131 1 0 0
+Groza 30|GiveItem 201050132 1 0 0
+Groza 50|GiveItem 201050133 1 0 0
+Suomi 20|GiveItem 201050134 1 0 0
+Suomi 40|GiveItem 201050135 1 0 0
+Suomi 72|GiveItem 201050136 1 0 0
+DP12 14|GiveItem 201050137 1 0 0
+FAMAS 25|GiveItem 201050138 1 0 0
+AK74 30新手弹匣|GiveItem 201050139 1 0 0
+SCAR-L 30|GiveItem 201050140 1 0 0
+BIZON 53|GiveItem 201050141 1 0 0
+T 30|GiveItem 201050142 1 0 0
+T 75|GiveItem 201050143 1 0 0
+TS5 30|GiveItem 201050144 1 0 0
+铝制前握把|GiveItem 201010002 1 0 0
+合金前握把|GiveItem 201010003 1 0 0
+轻量前握把|GiveItem 201010004 1 0 0
+三角前握把|GiveItem 201010005 1 0 0
+斜向前握把|GiveItem 201010006 1 0 0
+短直前握把|GiveItem 201010007 1 0 0
+垂直前握把|GiveItem 201010008 1 0 0
+轻便前握把|GiveItem 201010009 1 0 0
+RK0前握把|GiveItem 201010010 1 0 0
+紧凑前握把|GiveItem 201010011 1 0 0
+轻斜前握把|GiveItem 201010012 1 0 0
+蓝点镭指|GiveItem 201160001 1 0 0
+IR镭指灯|GiveItem 201160002 1 0 0
+多功能镭指|GiveItem 201160003 1 0 0
+快速镭指|GiveItem 201160004 1 0 0
+绿色镭指|GiveItem 201160005 1 0 0
+蓝紫镭指|GiveItem 201160006 1 0 0
+AR多口径消焰|GiveWeapon nn
+AR30橡胶垫|GiveWeapon bb
+全能AR战握|GiveWeapon hg
+G3标准护木|GiveWeapon db
+46消音|GiveWeapon hy
+Mpx伸缩枪托|GiveWeapon qb
+G3现代托|GiveWeapon up
+赛季G3|GiveWeapon G3
+农场原住民1（角色）|GiveItem 703020002 1 0 0
+鲁本王1（角色）|GiveItem 703020003 1 0 0
+农场原住民2（角色）|GiveItem 703020004 1 0 0
+鲁本王2（角色）|GiveItem 703020004 1 0 0
+北方军人机1（角色）|GiveItem 703020006 1 0 0
+北方军人机2（角色）|GiveItem 703020007 1 0 0
+山谷人机1（角色）|GiveItem 703020008 1 0 0
+山谷人机2（角色）|GiveItem 703020009 1 0 0
+老版电台黑金人机（角色）|GiveItem 703020010 1 0 0
+新版电台黑金人机（角色）|GiveItem 703020011 1 0 0
+白狼人机（角色）|GiveItem 703020012 1 0 0
+尤文（角色）|GiveItem 703020013 1 0 0
+苏梅克制式（角色）|GiveItem 703020014 1 0 0
+街区守卫（角色）|GiveItem 703020051 1 0 0
+机械师（角色）|GiveItem 703020052 1 0 0
+原皮（角色）|GiveItem 703020053 1 0 0
+城市灰（废案）（角色）|GiveItem 703020054 1 0 0
+深潜者（角色）|GiveItem 703020055 1 0 0
+特遣小队（角色）|GiveItem 703020056 1 0 0
+荒漠蝰蛇（角色）|GiveItem 703020057 1 0 0
+特遣初始套装（套装）|GiveItem 703010000 1 0 0
+特遣原皮（套装）|GiveItem 703010001 1 0 0
+深潜行者（套装）|GiveItem 703010002 1 0 0
+六队作训服（特遣小队）（套装）|GiveItem 703010003 1 0 0
+城市战术套装（套装）|GiveItem 703010004 1 0 0
+街区守卫（套装）|GiveItem 703010005 1 0 0
+装卸者（套装）|GiveItem 703010006 1 0 0
+机械师（套装）|GiveItem 703010007 1 0 0
+白狼连队作战服（套装）|GiveItem 703010008 1 0 0
+荒漠蝰蛇作战服（套装）|GiveItem 703010009 1 0 0
+边境看守（套装）|GiveItem 703010010 1 0 0
+九号特遣组（套装）|GiveItem 703010011 1 0 0
+GIGN（套装）|GiveItem 703010012 1 0 0
+信号旗（套装）|GiveItem 703010013 1 0 0
+空勤特遣队作战服（套装）|GiveItem 703010014 1 0 0
+黑金作战服（套装）|GiveItem 703010015 1 0 0
+台风II竞技运动服（套装）|GiveItem 703010016 1 0 0
+林地战术作战服（套装）|GiveItem 703010017 1 0 0
+林中人·特遣作战服（套装）|GiveItem 703010018 1 0 0
+苏梅克制式保安服（套装）|GiveItem 703010019 1 0 0
+黑金指挥官作战服（套装）|GiveItem 703010020 1 0 0
+秋日盛宴风衣（套装）|GiveItem 703010023 1 0 0
+普通人机1（衣服）|GiveItem 702020301 1 0 0
+普通人机2（衣服）|GiveItem 702020302 1 0 0
+普通人机3（衣服）|GiveItem 702020303 1 0 0
+普通人机4（衣服）|GiveItem 702020304 1 0 0
+普通人机5（衣服）|GiveItem 702020305 1 0 0
+北方军1（衣服）|GiveItem 702020306 1 0 0
+阿贾克斯（衣服）|GiveItem 702020307 1 0 0
+杰克逊（衣服）|GiveItem 702020308 1 0 0
+北方军2（衣服）|GiveItem 702020309 1 0 0
+山谷人机1（衣服）|GiveItem 702020310 1 0 0
+山谷人机2（衣服）|GiveItem 702020311 1 0 0
+老版电台黑金人机（衣服）|GiveItem 702020312 1 0 0
+普通人机鞋子1（鞋子）|GiveItem 702020701 1 0 0
+普通人机靴子1（鞋子）|GiveItem 702020702 1 0 0
+普通人机鞋子2（鞋子）|GiveItem 702020703 1 0 0
+普通人机鞋子3（鞋子）|GiveItem 702020704 1 0 0
+普通人机靴子2（鞋子）|GiveItem 702020705 1 0 0
+北方军靴子1（鞋子）|GiveItem 702020706 1 0 0
+阿贾靴子（鞋子）|GiveItem 702020707 1 0 0
+杰克逊靴子（鞋子）|GiveItem 702020708 1 0 0
+北方军靴子2（鞋子）|GiveItem 702020709 1 0 0
+山谷人机靴子1（鞋子）|GiveItem 702020710 1 0 0
+山谷人机鞋子1（鞋子）|GiveItem 702020711 1 0 0
+老版电台黑金人机鞋子（鞋子）|GiveItem 702020712 1 0 0
+普通人机裤子1（裤子）|GiveItem 702020601 1 0 0
+普通人机裤子2（裤子）|GiveItem 702020602 1 0 0
+普通人机裤子3（裤子）|GiveItem 702020603 1 0 0
+普通人机裤子4（裤子）|GiveItem 702020604 1 0 0
+普通人机裤子5（裤子）|GiveItem 702020605 1 0 0
+北方军裤子1（裤子）|GiveItem 702020606 1 0 0
+阿贾裤子（裤子）|GiveItem 702020607 1 0 0
+杰克逊裤子（裤子）|GiveItem 702020608 1 0 0
+北方军裤子2（裤子）|GiveItem 702020609 1 0 0
+山谷人机裤子1（裤子）|GiveItem 702020610 1 0 0
+山谷人机裤子2（裤子）|GiveItem 702020611 1 0 0
+老版电台黑金人机裤子（裤子）|GiveItem 702020612 1 0 0
+普通人机手套1（手套）|GiveItem 702020401 1 0 0
+普通人机手套2（手套）|GiveItem 702020402 1 0 0
+普通人机手套3（手套）|GiveItem 702020403 1 0 0
+普通人机手套4（手套）|GiveItem 702020404 1 0 0
+普通人机手套5（手套）|GiveItem 702020405 1 0 0
+北方军手套1（裸手）（手套）|GiveItem 702020406 1 0 0
+阿贾手套（手套）|GiveItem 702020407 1 0 0
+杰克逊手套（手套）|GiveItem 702020408 1 0 0
+北方军手套2（手套）|GiveItem 702020409 1 0 0
+山谷人机手套1（手套）|GiveItem 702020410 1 0 0
+山谷人机手套2（手套）|GiveItem 702020411 1 0 0
+老版电台黑金人机手套（手套）|GiveItem 702020412 1 0 0
+普通人机脸型1（脸型）|GiveItem 702020201 1 0 0
+普通人机脸型2（脸型）|GiveItem 702020202 1 0 0
+普通人机脸型3（脸型）|GiveItem 702020203 1 0 0
+普通人机脸型4（脸型）|GiveItem 702020204 1 0 0
+普通人机脸型5（脸型）|GiveItem 702020205 1 0 0
+北方军脸型1（脸型）|GiveItem 702020206 1 0 0
+阿贾脸型（脸型）|GiveItem 702020207 1 0 0
+杰克逊脸型（脸型）|GiveItem 702020208 1 0 0
+北方军脸型（脸型）|GiveItem 702020209 1 0 0
+山谷人机脸型（脸型）|GiveItem 702020210 1 0 0
+山谷人机脸型（脸型）|GiveItem 702020211 1 0 0
+老版电台黑金人机脸型（脸型）|GiveItem 702020212 1 0 0
+阿贾帽子（帽子）|GiveItem 702011201 1 0 0
+雷诺帽子（帽子）|GiveItem 702011202 1 0 0
+灰色鸭舌帽（帽子）|GiveItem 702011203 1 0 0
+绿色鸭舌帽（帽子）|GiveItem 702011204 1 0 0
+绿色针织帽（帽子）|GiveItem 702011205 1 0 0
+蓝色鸭舌帽（帽子）|GiveItem 702011206 1 0 0
+黑色鸭舌帽（帽子）|GiveItem 702011207 1 0 0
+棕色鸭舌帽（帽子）|GiveItem 702011208 1 0 0
+护耳飞行帽（帽子）|GiveItem 702011209 1 0 0
+教官帽（帽子）|GiveItem 702011210 1 0 0
+船形帽（帽子）|GiveItem 702011211 1 0 0
+牛仔骑兵帽（帽子）|GiveItem 702011212 1 0 0
+迷彩奔尼帽（帽子）|GiveItem 702011213 1 0 0
+苏联毛帽（帽子）|GiveItem 702011214 1 0 0
+沙漠军用平顶野战帽（帽子）|GiveItem 702011215 1 0 0
+林地军用平顶野战帽（帽子）|GiveItem 702011216 1 0 0
+飞行员皮帽（帽子）|GiveItem 702011217 1 0 0
+丛林遮阳帽（帽子）|GiveItem 702011219 1 0 0
+圣诞棉帽（帽子）|GiveItem 702011220 1 0 0
+灰白鸭舌帽（帽子）|GiveItem 702011221 1 0 0
+绿迷彩鸭舌帽（帽子）|GiveItem 702011222 1 0 0
+棕迷彩鸭舌帽（帽子）|GiveItem 702011218 1 0 0
+黑迷彩鸭舌帽（帽子）|GiveItem 702011219 1 0 0
+满改MK|GiveItem 801030382 1 0 0
+斗犬|GiveItem 801010938 1 0 0
+RPD|GiveItem 801050203 1 0 0
+T09|GiveItem 801060702 1 0 0
+M249|GiveItem 801050303 1 0 0
+满改MPX|GiveItem 801020220 1 0 0
+峰|GiveItem 801020185 1 0 0
+林中人|GiveItem 801010386 1 0 0
+满改法老|GiveItem 801010310 1 0 0
+黑金|GiveItem 801010277 1 0 0
+黄金H4|GiveItem 801010485 1 0 0
+竞技|GiveItem 801010287 1 0 0
+离子火花|GiveItem 701011791 1 0 0
+堕落者|GiveItem 701011758 1 0 0
+诸星之子|GiveItem 701011774 1 0 0
+贝利亚AUG|GiveItem 701011868 1 0 0
+丛林法则|GiveItem 701010957 1 0 0
+黄金AK|GiveItem 701010632 1 0 0
+焰色反应|GiveItem 701010329 1 0 0
+战术大师102|GiveItem 701010306 1 0 0
+水果皮肤|GiveItem 701012135 1 0 0
+战术大师|GiveItem 701011205 1 0 0
+骑士之剑|GiveItem 701011598 1 0 0
+王牌战士|GiveItem 701010924 1 0 0
+黄金M4|GiveItem 7010102218 1 0 0
+奥特曼皮肤|GiveItem 301040058 1 0 0
+奥特曼皮肤|GiveItem 301040059 1 0 0
+贝利亚皮套|GiveItem 700125 1 0 0
+巴尔坦星头套|GiveItem 700135 1 0 0

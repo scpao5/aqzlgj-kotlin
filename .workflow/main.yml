@@ -1,0 +1,21 @@
+version: '1.0'
+name: android-build
+displayName: 暗区指令工具 云编译
+triggers:
+  trigger: auto
+  push:
+    branches:
+      - prefix/main
+stages:
+  - name: build
+    displayName: 构建
+    steps:
+      - step: buildAndroid@1
+        name: build_apk
+        displayName: Android APK 构建
+        inputs:
+          projectPath: ./
+          gradleTask: assembleDebug
+          gradleVersion: 9.5.1
+          javaVersion: 21
+          uploadArtifact: true

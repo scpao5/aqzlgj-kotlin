@@ -1,0 +1,46 @@
+查普曼战术手斧|GiveItem 702011301 1 0 0
+开山刀|GiveItem 702011303 1 0 0
+撬棍|GiveItem 702011304 1 0 0
+登山镐|GiveItem 702011305 1 0 0
+工兵铲|GiveItem 702011306 1 0 0
+尼泊尔（军用弯刀）|GiveItem 702011307 1 0 0
+突击匕首|GiveItem 702011308 1 0 0
+战术伸缩棍|GiveItem 702011309 1 0 0
+丛林猎刃|GiveItem 702011310 1 0 0
+查普曼工兵铲|GiveItem 702011311 1 0 0
+鼬鲨猎刀|GiveItem 702011312 1 0 0
+勇士战斧|GiveItem 702011313 1 0 0
+滨海勇士战斧|GiveItem 702011314 1 0 0
+野战折刀|GiveItem 702011315 1 0 0
+瑞兔折刀|GiveItem 702011316 1 0 0
+精英指虎|GiveItem 702011318 1 0 0
+霜狼生存刀(wolf)|GiveItem 702011320 1 0 0
+急袭弯刀|GiveItem 702011322 1 0 0
+特遣蝴蝶刀（废案）|GiveItem 702011323 1 0 0
+烈焰战镰（废案）|GiveItem 702011324 1 0 0
+裁决手杖剑|GiveItem 702011325 1 0 0
+冬日冰镐|GiveItem 702011326 1 0 0
+恐惧战镰|GiveItem 702011327 1 0 0
+龙魂双截棍|GiveItem 702011328 1 0 0
+明刀·绣春|GiveItem 702011329 1 0 0
+胜利军刀|GiveItem 702011331 1 0 0
+涂鸦利刃|GiveItem 702011332 1 0 0
+贝利亚黄昏|GiveItem 702011333 1 0 0
+特制行军斧|GiveItem 702011398 1 0 0
+斧头（废案）|GiveWeapon axe
+伸缩棍（废案）|GiveWeapon batons
+查普曼铲（废案）|GiveWeapon chapmanshovel
+撬棍（废案）|GiveWeapon crowbar
+突击匕首|GiveWeapon dagger
+冰海战斧|GiveWeapon dx
+丛林猎刀（废案）|GiveWeapon huntermachete
+战术手斧（废案）|GiveWeapon kiba
+勇士战斧（更改）|GiveWeapon kraken
+尼泊尔（更改）|GiveWeapon kukri
+开山刀（更改）|GiveWeapon machete
+冰镐（更改）|GiveWeapon pick
+镰刀（废案）|GiveWeapon Randall
+特制行军斧|GiveWeapon rolf
+鲨鱼刀|GiveWeapon sha
+工兵铲|GiveWeapon shovel
+m9军刀|GiveWeapon yo

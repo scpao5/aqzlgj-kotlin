@@ -1,0 +1,15 @@
+海滨别墅储藏间|GiveWeapon Storage
+污水处理厂|GiveWeapon Warehouse
+B203|GiveWeapon 203
+民宅|GiveWeapon house
+d202|GiveWeapon 202
+c栋休闲室包间|GiveWeapon Private
+未知的农场钥匙(废案)|GiveWeapon 303
+主卧室|GiveWeapon room
+主客房|GiveWeapon main
+变电室钥匙（废案）|GiveWeapon station
+摄影区后台|GiveWeapon stage
+后期制作室|GiveWeapon production
+钥匙模板13|GiveWeapon Storeroom
+剪辑室|GiveWeapon Editing
+医务室|GiveWeapon Medical
