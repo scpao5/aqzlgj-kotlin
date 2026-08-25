@@ -176,7 +176,7 @@ class FloatWindowService : Service() {
         val channelId = "float_window_channel"
         val nm = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channel = NotificationChannel(channelId, "悬浮窗", NotificationManager.IMPORTANCE_LOW)
+            val channel = NotificationChannel(channelId, getString(R.string.cmd_float_window), NotificationManager.IMPORTANCE_LOW)
             nm.createNotificationChannel(channel)
         }
         val builder = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -186,8 +186,8 @@ class FloatWindowService : Service() {
             Notification.Builder(this)
         }
         val notification = builder
-            .setContentTitle("暗区指令工具")
-            .setContentText("悬浮窗运行中")
+            .setContentTitle(getString(R.string.app_name))
+            .setContentText(getString(R.string.float_notification))
             .setSmallIcon(R.drawable.ic_logo)
             .setOngoing(true)
             .build()
@@ -215,7 +215,7 @@ class FloatWindowService : Service() {
 
         // 标题
         floatTitle = TextView(this).apply {
-            text = "指令工具"
+            text = getString(R.string.float_title)
             textSize = 13f
             typeface = Typeface.DEFAULT_BOLD
             setTextColor(c.primary)
@@ -266,7 +266,7 @@ class FloatWindowService : Service() {
             ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT))
 
         floatInput = EditText(this).apply {
-            hint = "搜索指令..."
+            hint = getString(R.string.float_search_hint)
             textSize = 12f
             setTextColor(c.onSurface)
             setHintTextColor(c.hint)
@@ -279,7 +279,7 @@ class FloatWindowService : Service() {
         inputRow.addView(floatInput, LinearLayout.LayoutParams(0, dp(30), 1f))
 
         floatSearchBtn = Button(this).apply {
-            text = "搜索"
+            text = getString(R.string.float_search_btn)
             textSize = 12f
             setTextColor(0xFFFFFFFF.toInt())
             background = ripple(0x33FFFFFF.toInt(), createRoundDrawable(c.primary, dp(15f)), 15)
@@ -338,7 +338,7 @@ class FloatWindowService : Service() {
             windowManager!!.addView(floatView, layoutParams)
         } catch (e: Exception) {
             e.printStackTrace()
-            AppToast.show(this, "悬浮窗添加失败")
+            AppToast.show(this, getString(R.string.float_add_failed))
             stopSelf()
         }
     }
@@ -469,7 +469,7 @@ class FloatWindowService : Service() {
         val items = allCommands.filter { it.category == category }
         if (items.isEmpty()) {
             val empty = TextView(this).apply {
-                text = "该分区暂无指令"
+                text = getString(R.string.float_empty_category)
                 textSize = 12f
                 setTextColor(c.hint)
                 setPadding(dp(6), dp(8), dp(6), dp(6))
@@ -484,22 +484,22 @@ class FloatWindowService : Service() {
 
     private fun updateFloatTitle() {
         floatTitle!!.text = when (listState) {
-            0 -> "指令分类"
-            1 -> "搜索结果"
-            2 -> currentCategory ?: "指令工具"
-            else -> "指令工具"
+            0 -> getString(R.string.float_category_list)
+            1 -> getString(R.string.float_search_result)
+            2 -> currentCategory ?: getString(R.string.float_title)
+            else -> getString(R.string.float_title)
         }
     }
 
     private fun doSearch() {
         val kw = floatInput!!.text.toString().trim()
         if (kw.isEmpty()) {
-            AppToast.show(this, "请输入关键词")
+            AppToast.show(this, getString(R.string.float_need_keyword))
             return
         }
         listState = 1
         currentCategory = null
-        floatTitle!!.text = "搜索结果"
+        floatTitle!!.text = getString(R.string.float_search_result)
         floatListContainer!!.removeAllViews()
         ensureBackBtn()
         floatBackIv!!.visibility = View.VISIBLE
@@ -509,7 +509,7 @@ class FloatWindowService : Service() {
         }
         if (results.isEmpty()) {
             val empty = TextView(this).apply {
-                text = "未找到相关指令"
+                text = getString(R.string.float_empty_search)
                 textSize = 12f
                 setTextColor(c.hint)
                 setPadding(dp(6), dp(8), dp(6), dp(6))
@@ -705,7 +705,7 @@ class FloatWindowService : Service() {
         }
 
         val title = TextView(this).apply {
-            text = "关闭悬浮窗"
+            text = getString(R.string.float_close_title)
             textSize = 15f
             typeface = Typeface.DEFAULT_BOLD
             setTextColor(c.onSurface)
@@ -713,7 +713,7 @@ class FloatWindowService : Service() {
         root.addView(title)
 
         val msg = TextView(this).apply {
-            text = "确认要关闭悬浮窗吗？"
+            text = getString(R.string.float_close_msg)
             textSize = 13f
             setTextColor(c.textSecondary)
         }
@@ -732,7 +732,7 @@ class FloatWindowService : Service() {
         root.addView(btnRow, rowLp)
 
         val cancelBtn = Button(this).apply {
-            text = "取消"
+            text = getString(R.string.float_cancel)
             textSize = 13f
             setTextColor(c.primary)
             background = ripple(0x26000000.toInt(), createRoundDrawable(c.surfaceVariant, dp(8f)), 8)
@@ -742,7 +742,7 @@ class FloatWindowService : Service() {
         btnRow.addView(cancelBtn)
 
         val okBtn = Button(this).apply {
-            text = "确认"
+            text = getString(R.string.float_confirm)
             textSize = 13f
             setTextColor(0xFFFFFFFF.toInt())
             background = ripple(0x33FFFFFF.toInt(), createRoundDrawable(c.primary, dp(8f)), 8)

@@ -6,11 +6,16 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import com.sbby.aqzlgj.kotlin.data.repository.SettingsRepository
 import com.sbby.aqzlgj.kotlin.data.repository.SettingsRepositoryImpl
 import com.sbby.aqzlgj.kotlin.ui.screen.settings.SettingsUiState
+import com.sbby.aqzlgj.kotlin.templateApp
 import com.sbby.aqzlgj.kotlin.ui.theme.ColorMode
+import com.sbby.aqzlgj.kotlin.ui.util.AppToast
+import com.sbby.aqzlgj.kotlin.ui.util.checkNewVersion
 
 class SettingsViewModel(
     private val repo: SettingsRepository = SettingsRepositoryImpl()
@@ -173,6 +178,30 @@ class SettingsViewModel(
     fun setHideUpdateDialog(enabled: Boolean) {
         repo.hideUpdateDialog = enabled
         _uiState.update { it.copy(hideUpdateDialog = enabled) }
+    }
+
+    /** 手动检查更新 */
+    fun checkUpdateNow() {
+        viewModelScope.launch {
+            val info = withContext(Dispatchers.IO) { checkNewVersion() }
+            val current = try {
+                templateApp.packageManager
+                    .getPackageInfo(templateApp.packageName, 0).longVersionCode.toInt()
+            } catch (_: Exception) {
+                0
+            }
+            if (info.versionCode > current && info.downloadUrl.isNotBlank()) {
+                AppToast.show(templateApp, "发现新版本 v${info.versionCode}")
+                _uiState.update { it.copy(pendingUpdateUrl = info.downloadUrl) }
+            } else {
+                AppToast.show(templateApp, "已是最新版本")
+            }
+        }
+    }
+
+    /** 更新链接已打开，清除待处理状态 */
+    fun consumeUpdateUrl() {
+        _uiState.update { it.copy(pendingUpdateUrl = "") }
     }
 
 }

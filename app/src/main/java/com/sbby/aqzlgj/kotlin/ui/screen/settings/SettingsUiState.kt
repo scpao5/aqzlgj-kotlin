@@ -21,6 +21,7 @@ data class SettingsUiState(
     val pageScale: Float = 1.0f,
     val hideToast: Boolean = false,
     val hideUpdateDialog: Boolean = false,
+    val pendingUpdateUrl: String = "",
 )
 
 @Immutable
@@ -31,4 +32,6 @@ data class SettingsScreenActions(
     val onOpenAbout: () -> Unit,
     val onSetHideToast: (Boolean) -> Unit,
     val onSetHideUpdateDialog: (Boolean) -> Unit,
+    val onCheckUpdateNow: () -> Unit,
+    val onUpdateUrlOpened: () -> Unit,
 )

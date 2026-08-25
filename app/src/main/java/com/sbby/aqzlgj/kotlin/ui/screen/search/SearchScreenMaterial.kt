@@ -1,5 +1,7 @@
 package com.sbby.aqzlgj.kotlin.ui.screen.search
 
+import com.sbby.aqzlgj.kotlin.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -53,13 +55,13 @@ fun SearchScreenMaterial(
                         modifier = Modifier
                             .fillMaxWidth()
                             .focusRequester(focusRequester),
-                        placeholder = { Text("搜索指令名称或内容...") },
+                        placeholder = { Text(stringResource(R.string.cmd_search_placeholder)) },
                         singleLine = true,
                     )
                 },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "返回")
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = stringResource(R.string.cmd_search_title))
                     }
                 },
             )
@@ -74,12 +76,12 @@ fun SearchScreenMaterial(
             when {
                 loading -> CircularProgressIndicator()
                 blank -> Text(
-                    text = "输入关键词搜索指令",
+                    text = stringResource(R.string.cmd_search_prompt),
                     style = MaterialTheme.typography.bodyLarge,
                     color = MaterialTheme.colorScheme.outline,
                 )
                 empty -> Text(
-                    text = "未找到相关指令",
+                    text = stringResource(R.string.cmd_search_empty),
                     style = MaterialTheme.typography.bodyLarge,
                     color = MaterialTheme.colorScheme.outline,
                 )

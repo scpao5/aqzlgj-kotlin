@@ -1,5 +1,7 @@
 package com.sbby.aqzlgj.kotlin.ui.screen.commands
 
+import com.sbby.aqzlgj.kotlin.R
+import androidx.compose.ui.res.stringResource
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -26,7 +28,7 @@ import com.sbby.aqzlgj.kotlin.ui.viewmodel.CommandsViewModel
 /** 悬浮窗开关：无权限先申请，有权限则启动/停止悬浮窗服务 */
 fun openFloatWindow(context: Context) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.canDrawOverlays(context)) {
-        AppToast.show(context, "请授予悬浮窗权限")
+        AppToast.show(context, context.getString(R.string.cmd_toast_overlay))
         val intent = Intent(
             Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
             Uri.parse("package:${context.packageName}")
@@ -37,10 +39,10 @@ fun openFloatWindow(context: Context) {
         val serviceIntent = Intent(context, FloatWindowService::class.java)
         if (FloatWindowService.isRunning) {
             context.stopService(serviceIntent)
-            AppToast.show(context, "悬浮窗已关闭")
+            AppToast.show(context, context.getString(R.string.cmd_toast_float_off))
         } else {
             context.startForegroundService(serviceIntent)
-            AppToast.show(context, "悬浮窗已开启")
+            AppToast.show(context, context.getString(R.string.cmd_toast_float_on))
         }
     }
 }

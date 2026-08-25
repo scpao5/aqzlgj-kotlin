@@ -14,7 +14,7 @@ fun isNetworkAvailable(context: Context): Boolean {
             caps.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) ||
             caps.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)
 
-    return hasTransport &&
-            caps.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) &&
-            caps.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED)
+    // 注意：不校验 NET_CAPABILITY_VALIDATED——
+    // realme/国内网络下系统验证（连 Google 服务器）经常不通过，会导致误判无网络
+    return hasTransport && caps.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
 }

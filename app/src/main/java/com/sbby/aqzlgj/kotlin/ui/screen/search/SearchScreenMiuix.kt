@@ -1,5 +1,7 @@
 package com.sbby.aqzlgj.kotlin.ui.screen.search
 
+import com.sbby.aqzlgj.kotlin.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -50,12 +52,12 @@ fun SearchScreenMiuix(
         topBar = {
             TopAppBar(
                 color = MiuixTheme.colorScheme.surface,
-                title = "搜索",
+                title = stringResource(R.string.cmd_search_title),
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(
                             imageVector = MiuixIcons.Back,
-                            contentDescription = "返回",
+                            contentDescription = stringResource(R.string.cmd_search_title),
                             tint = MiuixTheme.colorScheme.onSurface,
                         )
                     }
@@ -78,7 +80,7 @@ fun SearchScreenMiuix(
                     InputField(
                         query = query,
                         onQueryChange = onQueryChange,
-                        label = "搜索指令名称或内容...",
+                        label = stringResource(R.string.cmd_search_placeholder),
                         leadingIcon = {
                             Icon(
                                 imageVector = MiuixIcons.Basic.Search,
@@ -97,12 +99,12 @@ fun SearchScreenMiuix(
                     Box(modifier = Modifier.fillMaxSize().padding(top = 72.dp)) {
                         when {
                             blank -> Text(
-                                text = "输入关键词搜索指令",
+                                text = stringResource(R.string.cmd_search_prompt),
                                 color = MiuixTheme.colorScheme.onSurfaceVariantSummary,
                                 modifier = Modifier.align(Alignment.Center),
                             )
                             empty -> Text(
-                                text = "未找到相关指令",
+                                text = stringResource(R.string.cmd_search_empty),
                                 color = MiuixTheme.colorScheme.onSurfaceVariantSummary,
                                 modifier = Modifier.align(Alignment.Center),
                             )

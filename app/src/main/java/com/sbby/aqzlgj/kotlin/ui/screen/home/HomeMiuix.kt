@@ -26,15 +26,18 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.sbby.aqzlgj.kotlin.BuildConfig
 import com.sbby.aqzlgj.kotlin.R
 import com.sbby.aqzlgj.kotlin.permission.PermissionState
 import com.sbby.aqzlgj.kotlin.ui.component.miuix.WarningCard
 import com.sbby.aqzlgj.kotlin.ui.theme.LocalEnableBlur
+import com.sbby.aqzlgj.kotlin.ui.util.AppDownloader
 import com.sbby.aqzlgj.kotlin.ui.util.BlurredBar
 import com.sbby.aqzlgj.kotlin.ui.util.rememberBlurBackdrop
 import top.yukonga.miuix.kmp.basic.BasicComponent
@@ -53,7 +56,8 @@ import top.yukonga.miuix.kmp.utils.overScrollVertical
 import top.yukonga.miuix.kmp.utils.scrollEndHaptic
 
 // 升级公告：内容就绪后改为 true 即可显示
-private const val showAnnouncement = true
+private val showAnnouncement: Boolean get() =
+    BuildConfig.VERSION_NAME.contains("debug", ignoreCase = true)
 
 @Composable
 fun HomePagerMiuix(
@@ -62,6 +66,7 @@ fun HomePagerMiuix(
     actions: HomeActions,
     bottomInnerPadding: Dp,
 ) {
+    val context = LocalContext.current
     val githubUrl = stringResource(R.string.home_example_link_url)
     val scrollBehavior = MiuixScrollBehavior()
     val enableBlur = LocalEnableBlur.current
@@ -117,6 +122,34 @@ fun HomePagerMiuix(
                             title = stringResource(R.string.home_app_version),
                             summary = state.systemInfo.appVersion,
                         )
+                    }
+                }
+                // 发现新版本提示
+                val hasUpdate = state.latestVersionInfo.versionCode.toLong() > state.currentAppVersionCode &&
+                    state.latestVersionInfo.downloadUrl.isNotBlank()
+                if (hasUpdate) {
+                    item {
+                        Card(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(top = 12.dp),
+                            colors = CardDefaults.defaultColors(color = colorScheme.primaryContainer),
+                            onClick = { AppDownloader.downloadApk(context, state.latestVersionInfo.downloadUrl) },
+                            showIndication = true,
+                        ) {
+                            BasicComponent(
+                                title = stringResource(R.string.update_found, state.latestVersionInfo.versionCode.toString()),
+                                summary = stringResource(R.string.update_download),
+                                endActions = {
+                                    Icon(
+                                        imageVector = MiuixIcons.Link,
+                                        tint = colorScheme.primary,
+                                        contentDescription = null
+                                    )
+                                },
+                                onClick = { AppDownloader.downloadApk(context, state.latestVersionInfo.downloadUrl) },
+                            )
+                        }
                     }
                 }
                 item {
@@ -219,7 +252,7 @@ private fun PermissionCardMiuix(
                 Text(
                     text =
                         if (requiredGranted) {
-                            if (rootAvailable) "Root 模式" else "免 Root 模式"
+                            if (rootAvailable) stringResource(R.string.root_mode) else stringResource(R.string.non_root_mode)
                         } else {
                             stringResource(R.string.permission_action_required)
                         },

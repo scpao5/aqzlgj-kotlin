@@ -25,10 +25,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.sbby.aqzlgj.kotlin.R
 import com.sbby.aqzlgj.kotlin.data.CodeItem
 import com.sbby.aqzlgj.kotlin.data.PrivilegeManager
 import com.sbby.aqzlgj.kotlin.ui.LocalUiMode
@@ -93,8 +95,8 @@ fun CommandListItemMiuix(
                     modifier = Modifier.weight(1f),
                 )
                 // 文字按钮（第一版样式）
-                MiuixTextButton(text = "复制", onClick = { copyCommand(context, item) })
-                MiuixTextButton(text = "执行", onClick = { executeCommand(context, item) })
+                MiuixTextButton(text = stringResource(R.string.cmd_copy), onClick = { copyCommand(context, item) })
+                MiuixTextButton(text = stringResource(R.string.cmd_execute), onClick = { executeCommand(context, item) })
             }
             MiuixText(
                 text = item.code,
@@ -144,10 +146,10 @@ fun CommandListItemMaterial(
                 )
                 // 文字按钮（第一版样式）
                 TextButton(onClick = { copyCommand(context, item) }) {
-                    Text("复制")
+                    Text(stringResource(R.string.cmd_copy))
                 }
                 TextButton(onClick = { executeCommand(context, item) }) {
-                    Text("执行", color = MaterialTheme.colorScheme.primary)
+                    Text(stringResource(R.string.cmd_execute), color = MaterialTheme.colorScheme.primary)
                 }
             }
             Text(

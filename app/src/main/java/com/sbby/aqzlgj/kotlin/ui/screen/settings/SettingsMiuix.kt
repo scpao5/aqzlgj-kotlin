@@ -120,13 +120,13 @@ fun SettingPagerMiuix(
                             .fillMaxWidth(),
                     ) {
                         SwitchPreference(
-                            title = "隐藏 Toast 提示",
-                            summary = "开启后不再弹出 Toast 提示",
+                            title = stringResource(R.string.settings_hide_toast),
+                            summary = stringResource(R.string.settings_hide_toast_summary),
                             startAction = {
                                 Icon(
                                     Icons.Rounded.NotificationsOff,
                                     modifier = Modifier.padding(end = 6.dp),
-                                    contentDescription = "隐藏 Toast 提示",
+                                    contentDescription = stringResource(R.string.settings_hide_toast),
                                     tint = colorScheme.onBackground
                                 )
                             },
@@ -134,18 +134,31 @@ fun SettingPagerMiuix(
                             onCheckedChange = actions.onSetHideToast
                         )
                         SwitchPreference(
-                            title = "隐藏更新弹窗",
-                            summary = "开启后不再提示应用更新",
+                            title = stringResource(R.string.settings_hide_update_dialog),
+                            summary = stringResource(R.string.settings_hide_update_dialog_summary),
                             startAction = {
                                 Icon(
                                     Icons.Rounded.UpdateDisabled,
                                     modifier = Modifier.padding(end = 6.dp),
-                                    contentDescription = "隐藏更新弹窗",
+                                    contentDescription = stringResource(R.string.settings_hide_update_dialog),
                                     tint = colorScheme.onBackground
                                 )
                             },
                             checked = uiState.hideUpdateDialog,
                             onCheckedChange = actions.onSetHideUpdateDialog
+                        )
+                        ArrowPreference(
+                            title = stringResource(R.string.settings_check_update_now),
+                            summary = stringResource(R.string.settings_check_update_now_summary),
+                            startAction = {
+                                Icon(
+                                    Icons.Rounded.Update,
+                                    modifier = Modifier.padding(end = 6.dp),
+                                    contentDescription = stringResource(R.string.settings_check_update_now),
+                                    tint = colorScheme.onBackground
+                                )
+                            },
+                            onClick = actions.onCheckUpdateNow
                         )
                     }
 

@@ -91,8 +91,8 @@ fun SettingPagerMaterial(
                     {
                         SegmentedSwitchItem(
                             icon = Icons.Filled.NotificationsOff,
-                            title = "隐藏 Toast 提示",
-                            summary = "开启后不再弹出 Toast 提示",
+                            title = stringResource(R.string.settings_hide_toast),
+                            summary = stringResource(R.string.settings_hide_toast_summary),
                             checked = uiState.hideToast,
                             onCheckedChange = actions.onSetHideToast
                         )
@@ -100,10 +100,22 @@ fun SettingPagerMaterial(
                     {
                         SegmentedSwitchItem(
                             icon = Icons.Filled.UpdateDisabled,
-                            title = "隐藏更新弹窗",
-                            summary = "开启后不再提示应用更新",
+                            title = stringResource(R.string.settings_hide_update_dialog),
+                            summary = stringResource(R.string.settings_hide_update_dialog_summary),
                             checked = uiState.hideUpdateDialog,
                             onCheckedChange = actions.onSetHideUpdateDialog
+                        )
+                    },
+                    {
+                        SegmentedListItem(
+                            onClick = actions.onCheckUpdateNow,
+                            headlineContent = { Text(stringResource(R.string.settings_check_update_now)) },
+                            leadingContent = {
+                                Icon(
+                                    Icons.Filled.Update,
+                                    stringResource(R.string.settings_check_update_now)
+                                )
+                            },
                         )
                     }
                 )

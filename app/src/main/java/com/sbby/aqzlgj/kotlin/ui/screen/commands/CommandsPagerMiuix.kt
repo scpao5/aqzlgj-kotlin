@@ -94,11 +94,11 @@ fun CommandsPagerMiuix(
                             showIndication = true,
                         ) {
                             BasicComponent(
-                                title = "悬浮窗",
+                                title = stringResource(R.string.cmd_float_window),
                                 summary = if (permissionState.overlay) {
-                                    "权限已授予，点击开启游戏内悬浮窗"
+                                    stringResource(R.string.cmd_float_ready)
                                 } else {
-                                    "需要悬浮窗权限，点击申请"
+                                    stringResource(R.string.cmd_float_need)
                                 },
                                 endActions = {
                                     Icon(
@@ -117,7 +117,7 @@ fun CommandsPagerMiuix(
                                 .clickable { actions.onSearchClick() }
                         ) {
                             SearchBarFake(
-                                label = "搜索指令...",
+                                label = stringResource(R.string.cmd_search_hint),
                                 searchBarTopPadding = 0.dp,
                             )
                         }
@@ -136,7 +136,7 @@ fun CommandsPagerMiuix(
                     ) {
                         BasicComponent(
                             title = category,
-                            summary = "${state.countOf(category)} 条指令",
+                            summary = stringResource(R.string.cmd_count, state.countOf(category)),
                             endActions = {
                                 Icon(
                                     imageVector = MiuixIcons.Link,

@@ -78,16 +78,16 @@ fun CommandsPagerMaterial(
                 ) {
                     Column(modifier = Modifier.weight(1f)) {
                         Text(
-                            text = "悬浮窗",
+                            text = stringResource(R.string.cmd_float_window),
                             style = MaterialTheme.typography.titleMedium,
                             fontWeight = FontWeight.SemiBold,
                         )
                         Spacer(Modifier.height(4.dp))
                         Text(
                             text = if (permissionState.overlay) {
-                                "权限已授予，点击开启游戏内悬浮窗"
+                                stringResource(R.string.cmd_float_ready)
                             } else {
-                                "需要悬浮窗权限，点击申请"
+                                stringResource(R.string.cmd_float_need)
                             },
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSecondaryContainer,
@@ -117,7 +117,7 @@ fun CommandsPagerMaterial(
                     )
                     Spacer(Modifier.size(10.dp))
                     Text(
-                        text = "搜索指令...",
+                        text = stringResource(R.string.cmd_search_hint),
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.outline,
                     )
@@ -142,7 +142,7 @@ fun CommandsPagerMaterial(
                             )
                             Spacer(Modifier.height(4.dp))
                             Text(
-                                text = "${state.countOf(category)} 条指令",
+                                text = stringResource(R.string.cmd_count, state.countOf(category)),
                                 style = MaterialTheme.typography.bodyMedium,
                                 color = MaterialTheme.colorScheme.outline,
                             )

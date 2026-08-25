@@ -34,16 +34,20 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.sbby.aqzlgj.kotlin.BuildConfig
 import com.sbby.aqzlgj.kotlin.R
 import com.sbby.aqzlgj.kotlin.permission.PermissionState
 import com.sbby.aqzlgj.kotlin.ui.component.material.TonalCard
+import com.sbby.aqzlgj.kotlin.ui.util.AppDownloader
 
 // 升级公告：内容就绪后改为 true 即可显示
-private const val showAnnouncement = true
+private val showAnnouncement: Boolean get() =
+    BuildConfig.VERSION_NAME.contains("debug", ignoreCase = true)
 
 @Composable
 fun HomePagerMaterial(
@@ -52,6 +56,7 @@ fun HomePagerMaterial(
     actions: HomeActions,
     bottomInnerPadding: Dp,
 ) {
+    val context = LocalContext.current
     val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior(rememberTopAppBarState())
 
     Scaffold(
@@ -74,6 +79,33 @@ fun HomePagerMaterial(
             }
             // App 版本
             InfoCard(systemInfo = state.systemInfo)
+            // 发现新版本提示
+            val hasUpdate = state.latestVersionInfo.versionCode.toLong() > state.currentAppVersionCode &&
+                state.latestVersionInfo.downloadUrl.isNotBlank()
+            if (hasUpdate) {
+                TonalCard(onClick = { AppDownloader.downloadApk(context, state.latestVersionInfo.downloadUrl) }) {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(20.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Column {
+                            Text(
+                                text = stringResource(R.string.update_found, state.latestVersionInfo.versionCode.toString()),
+                                style = MaterialTheme.typography.titleSmall,
+                                fontWeight = FontWeight.SemiBold,
+                            )
+                            Spacer(Modifier.height(4.dp))
+                            Text(
+                                text = stringResource(R.string.update_download),
+                                style = MaterialTheme.typography.bodyMedium,
+                                color = MaterialTheme.colorScheme.outline,
+                            )
+                        }
+                    }
+                }
+            }
             // GitHub 仓库链接
             ExampleLinkCard(onOpenUrl = actions.onOpenUrl)
             Spacer(Modifier.height(bottomInnerPadding))
@@ -159,7 +191,7 @@ private fun PermissionCard(
                     label = {
                         Text(
                             if (state.requiredGranted) {
-                                if (rootAvailable) "Root 模式" else "免 Root 模式"
+                                if (rootAvailable) stringResource(R.string.root_mode) else stringResource(R.string.non_root_mode)
                             } else {
                                 stringResource(R.string.permission_action_required)
                             }

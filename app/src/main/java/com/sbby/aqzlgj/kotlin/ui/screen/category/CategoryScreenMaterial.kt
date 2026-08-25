@@ -1,5 +1,7 @@
 package com.sbby.aqzlgj.kotlin.ui.screen.category
 
+import com.sbby.aqzlgj.kotlin.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -42,7 +44,7 @@ fun CategoryScreenMaterial(
                 title = { Text(categoryName) },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "返回")
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = stringResource(R.string.cmd_search_title))
                     }
                 },
             )
@@ -57,7 +59,7 @@ fun CategoryScreenMaterial(
             when {
                 loading -> CircularProgressIndicator()
                 empty -> Text(
-                    text = "该分区暂无指令",
+                    text = stringResource(R.string.cmd_category_empty),
                     style = MaterialTheme.typography.bodyLarge,
                     color = MaterialTheme.colorScheme.outline,
                 )
