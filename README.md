@@ -60,6 +60,12 @@ app/src/main/java/com/sbby/aqzlgj/kotlin/
 
 本项目采用 [GNU General Public License v3.0](LICENSE) 开源协议。
 
+## ⬆️ 上游与致谢
+
+- **UI 模板上游**：[KernelSU Style UI Kit](https://github.com/chenaizhang/KernelSU-Style-UI-Kit)（基于 KernelSU Manager 界面风格整理的 Compose UI 模板）
+- **前身**：[scpao5/aqzlgj](https://github.com/scpao5/aqzlgj)（Java 版暗区指令工具）
+- **生态依赖**：Jetpack Compose、Material Design 3、[Miuix](https://github.com/Yukonga/Miuix)、Navigation3、commonmark、OkHttp 等开源项目
+
 ## 👤 作者
 
 scpao5（是白白吖）

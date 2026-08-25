@@ -9906,18 +9906,6 @@ VSS海外冬日|GiveItem 810001628 1 0 0
 特维拉声望|GiveItem 901040301 1 0 0
 科伦声望|GiveItem 901040302 1 0 0
 塔莉娅信任度|GiveItem 901040303 1 0 0
-传承箱[灰狐|GiveItem  1 0 0
-传承箱[猎鹰|GiveItem  1 0 0
-传承箱[雪狼|GiveItem  1 0 0
-传承箱[犀牛|GiveItem  1 0 0
-传承箱[虎王|GiveItem  1 0 0
-传承箱[雄狮|GiveItem  1 0 0
-传承箱[棕熊|GiveItem  1 0 0
-传承箱[棕熊之巅|GiveItem  1 0 0
-头像框[雪狼|GiveItem  1 0 0
-头像框[S3特遣大师|GiveItem  1 0 0
-头像框[追捕行动|GiveItem  1 0 0
-头像框[薪火相传|GiveItem  1 0 0
 头像框储备5|GiveItem 901060005 1 0 0
 官方网站专属头像框|GiveItem 901060006 1 0 0
 游戏中心头像框|GiveItem 901060007 1 0 0
@@ -9942,93 +9930,10 @@ B站专属头像框|GiveItem 901060013 1 0 0
 Triathlon|GiveItem 901060027 1 0 0
 QQ专属头像框|GiveItem 901060028 1 0 0
 华为专属头像框|GiveItem 901060029 1 0 0
-头像框[S1胜利之旗|GiveItem  1 0 0
 微信专属头像框|GiveItem 901060031 1 0 0
 头像框储备32|GiveItem 901060032 1 0 0
-头像框[S1实力新锐|GiveItem  1 0 0
-头像框[特遣之证|GiveItem  1 0 0
-头像框[S2中坚战士|GiveItem  1 0 0
 头像框储备36|GiveItem 901060036 1 0 0
-头像框[蝰蛇猎手|GiveItem  1 0 0
-头像框[S1枪火荣耀|GiveItem  1 0 0
-头像框[王牌射手|GiveItem  1 0 0
-头像框[秋日盛会|GiveItem  1 0 0
-头像框[S2特遣大师|GiveItem  1 0 0
-头像框[枫述秋情|GiveItem  1 0 0
-头像框[超级大赢家|GiveItem  1 0 0
-头像框[上元快乐|GiveItem  1 0 0
-头像框[瑞兔迎春|GiveItem  1 0 0
-头像框[嬉乐节快乐|GiveItem  1 0 0
-头像框[军港风暴|GiveItem  1 0 0
-头像框[军港行动|GiveItem  1 0 0
-头像框[白狼新人|GiveItem  1 0 0
-头像框[白狼精英|GiveItem  1 0 0
-头像框[S4特遣精英|GiveItem  1 0 0
-头像框[S4特遣大师|GiveItem  1 0 0
-头像框[伺机待发|GiveItem  1 0 0
-头像框[惊雷而动|GiveItem  1 0 0
-头像框[S5特遣精英|GiveItem  1 0 0
-头像框[S5特遣大师|GiveItem  1 0 0
-头像框[卓越技艺|GiveItem  1 0 0
-头像框[战斗艺术|GiveItem  1 0 0
-头像框[S6特遣精英|GiveItem  1 0 0
-头像框[S6特遣大师|GiveItem  1 0 0
-头像框[团队支柱|GiveItem  1 0 0
-头像框[关键火力|GiveItem  1 0 0
-头像框[S7特遣精英|GiveItem  1 0 0
-头像框[S7特遣大师|GiveItem  1 0 0
-头像框[矿洞守卫|GiveItem  1 0 0
-头像框[冲破束缚|GiveItem  1 0 0
-头像框[S3特遣大师|GiveItem  1 0 0
-头像框[专业人士|GiveItem  1 0 0
-头像框[攀登大师|GiveItem  1 0 0
-头像框[S8特遣大师|GiveItem  1 0 0
-头像框[S8特遣精英|GiveItem  1 0 0
-头像框[枪弹上膛|GiveItem  1 0 0
-头像框[S9特遣大师|GiveItem  1 0 0
-头像框[S9特遣精英|GiveItem  1 0 0
-头像框[S10赛季手册|GiveItem  1 0 0
-头像框[S10赛季进阶手册|GiveItem  1 0 0
-头像框[一枪平等|GiveItem  1 0 0
-头像框[百年老店|GiveItem  1 0 0
-头像框[深渊回响|GiveItem  1 0 0
-头像框[深渊余波|GiveItem  1 0 0
-头像框[蝴蝶行动|GiveItem  1 0 0
-头像框[冬夜记忆|GiveItem  1 0 0
-头像框[永冻回忆|GiveItem  1 0 0
-头像框[北山积雪|GiveItem  1 0 0
-头像框[北山主峰|GiveItem  1 0 0
 动态头像框|GiveItem 901060092 1 0 0
-头像框[烟消人散|GiveItem  1 0 0
-头像框[义存云硝|GiveItem  1 0 0
-头像框[歧路同心|GiveItem  1 0 0
-头像框[旧日历练|GiveItem  1 0 0
-头像框[一斧当关|GiveItem  1 0 0
-头像框[雪绒花|GiveItem  1 0 0
-头像框[火绒草|GiveItem  1 0 0
-头像框[火力倾泻|GiveItem  1 0 0
-头像框[重装出击|GiveItem  1 0 0
-头像框[渡鸦之眼|GiveItem  1 0 0
-头像框[幽魂冥灯|GiveItem  1 0 0
-头像框[黑羽漫天|GiveItem  1 0 0
-头像框[马克西姆|GiveItem  1 0 0
-头像框[电子屏|GiveItem  1 0 0
-头像框[墨镜|GiveItem  1 0 0
-头像框[硬核护具|GiveItem  1 0 0
-头像框[VIP特遣战士|GiveItem  1 0 0
-头像框[伞降|GiveItem  1 0 0
-头像框[苍白面具|GiveItem  1 0 0
-头像框[白蔷薇|GiveItem  1 0 0
-头像框[侠|GiveItem  1 0 0
-头像框[义|GiveItem  1 0 0
-头像框[链刃|GiveItem  1 0 0
-头像框[遗忘之手|GiveItem  1 0 0
-头像框[真实之外|GiveItem  1 0 0
-头像框[未定形骸|GiveItem  1 0 0
-头像框[亡者归来|GiveItem  1 0 0
-头像框[生命螺旋|GiveItem  1 0 0
-头像框[生化寒潮|GiveItem  1 0 0
-头像框[年年有余|GiveItem  1 0 0
 王牌教官|GiveItem 901070101 1 0 0
 巅峰战士|GiveItem 901070102 1 0 0
 一呼百应|GiveItem 901070103 1 0 0
@@ -12090,9 +11995,6 @@ S18赛季典藏进阶手册激活卡|GiveItem 905030841 1 0 0
 骑士代币|GiveItem 908020005 1 0 0
 荣誉勋章|GiveItem 908020006 1 0 0
 
-|GiveItem  1 0 0
-========== 医疗用品（112）==========
-|GiveItem  1 0 0
 复苏注射剂|GiveItem 106000008 1 0 0
 速效止痛药|GiveItem 401010001 1 0 0
 特效止痛药|GiveItem 401010002 1 0 0
@@ -12206,9 +12108,6 @@ Rolf专属药剂|GiveItem 401050012 1 0 0
 军用急救包 挂饰（7天激活卡）|GiveItem 906010002 1 0 0
 军用急救包 挂饰（30天激活卡）|GiveItem 906010003 1 0 0
 
-|GiveItem  1 0 0
-========== 外观与活动物品（2099）==========
-|GiveItem  1 0 0
 迷彩奔尼帽|GiveItem 301130013 1 0 0
 迷彩八角帽|GiveItem 301130015 1 0 0
 迷彩巡逻帽|GiveItem 301130016 1 0 0
@@ -13674,8 +13573,6 @@ SKS卡宾枪 活动储备资源贴花|GiveItem 810001450 1 0 0
 AN94 周年庆1|GiveItem 810001542 1 0 0
 AN94 周年庆2|GiveItem 810001543 1 0 0
 AN94 周年庆3|GiveItem 810001544 1 0 0
-头像框[三周年|GiveItem  1 0 0
-头像框[四周年庆|GiveItem  1 0 0
 暗区一周年|GiveItem 901070123 1 0 0
 基础套装券|GiveItem 903030001 1 0 0
 进阶套装券|GiveItem 903030002 1 0 0
@@ -14309,9 +14206,6 @@ MP5赛事枪皮组合包优惠券|GiveItem 905050010 1 0 0
 都会戍卫军需卡|GiveItem 908010007 1 0 0
 都会戍卫军需卡（赠送）|GiveItem 908010008 1 0 0
 
-|GiveItem  1 0 0
-========== 弹药（307）==========
-|GiveItem  1 0 0
 M870霰弹枪|GiveItem 101060001 1 0 0
 MP 133霰弹枪|GiveItem 101060002 1 0 0
 S12K霰弹枪|GiveItem 101060003 1 0 0
@@ -14591,8 +14485,6 @@ USAS12霰弹枪830储备|GiveItem 810001569 1 0 0
 USAS12霰弹枪南瓜节|GiveItem 810001578 1 0 0
 S12K霰弹枪天蝎座染色|GiveItem 810001600 1 0 0
 USAS12霰弹枪少前近战|GiveItem 810001624 1 0 0
-头像框[子弹力量|GiveItem  1 0 0
-头像框[弹药充足|GiveItem  1 0 0
 4级子弹自选包-6个月版|GiveItem 904010148 1 0 0
 【限期】标准子弹自选包（30发）|GiveItem 904010180 1 0 0
 【限期】标准子弹自选包（30发）|GiveItem 904010187 1 0 0
@@ -14620,9 +14512,6 @@ USAS12霰弹枪少前近战|GiveItem 810001624 1 0 0
 黑金弹头·P90配件扩充包|GiveItem 904800236 1 0 0
 加重子弹|GiveItem 905011014 1 0 0
 
-|GiveItem  1 0 0
-========== 材料与工具（97）==========
-|GiveItem  1 0 0
 老式钢盔|GiveItem 301040021 1 0 0
 旧式黑色钢盔|GiveItem 301040039 1 0 0
 老式褐色钢盔|GiveItem 301040043 1 0 0
@@ -14721,9 +14610,6 @@ AR57 电动工具|GiveItem 810000077 1 0 0
 智控芯片|GiveItem 905020207 1 0 0
 分离芯片|GiveItem 905020332 1 0 0
 
-|GiveItem  1 0 0
-========== 枪械配件（5717）==========
-|GiveItem  1 0 0
 激光目标指示器|GiveItem 104990010 1 0 0
 铝制垂直前握把|GiveItem 201010002 1 0 0
 合金战术前握把|GiveItem 201010003 1 0 0
@@ -20442,9 +20328,6 @@ M4A1 长枪管 托芯 零配件用|GiveItem 810000495 1 0 0
 怪兽胶囊弹匣涂装包 Ⅳ|GiveItem 904800143 1 0 0
 智控扳机代币|GiveItem 905020198 1 0 0
 
-|GiveItem  1 0 0
-========== 武器（1972）==========
-|GiveItem  1 0 0
 AKM突击步枪|GiveItem 101010001 1 0 0
 M4A1突击步枪|GiveItem 101010002 1 0 0
 FAL突击步枪|GiveItem 101010003 1 0 0
@@ -22418,9 +22301,6 @@ MP5微型冲锋枪海外冬日|GiveItem 810001630 1 0 0
 近战武器伤害|GiveItem 905011025 1 0 0
 GHO 2 进攻手榴弹 挂饰（15天激活卡）|GiveItem 906010001 1 0 0
 
-|GiveItem  1 0 0
-========== 贵重物品（1270）==========
-|GiveItem  1 0 0
 AK系列合金拉机柄帽|GiveItem 201150001 1 0 0
 AR 15合金插销拉机柄|GiveItem 201150009 1 0 0
 飞行员金属框风镜|GiveItem 301140015 1 0 0
@@ -22985,11 +22865,6 @@ A545火树银花2|GiveItem 810001148 1 0 0
 A545火树银花3|GiveItem 810001149 1 0 0
 M16卡宾枪 幻彩宝石染色|GiveItem 810001374 1 0 0
 金币|GiveItem 901010003 1 0 0
-头像框[黑金新人|GiveItem  1 0 0
-头像框[黑金精英|GiveItem  1 0 0
-头像框[黄金殿堂|GiveItem  1 0 0
-头像框[决战银河|GiveItem  1 0 0
-头像框[金狮|GiveItem  1 0 0
 黄金猎人|GiveItem 901070107 1 0 0
 黑金特遣|GiveItem 901070119 1 0 0
 金狮联盟|GiveItem 901070129 1 0 0
@@ -23692,9 +23567,6 @@ M4A1黑金（3天激活卡）|GiveItem 906100001 1 0 0
 黑金国际·HTacA9（7天激活卡）|GiveItem 906140003 1 0 0
 黑金指挥官·AL制式弹挂甲(30天体验卡)|GiveItem 906140004 1 0 0
 
-|GiveItem  1 0 0
-========== 钥匙与任务物品（507）==========
-|GiveItem  1 0 0
 情报扫描仪|GiveItem 104140006 1 0 0
 情报扫描仪|GiveItem 106000004 1 0 0
 简陋的钥匙链(1*3)|GiveItem 301110001 1 0 0
@@ -24203,9 +24075,6 @@ M16枪械任务奖励|GiveItem 801081003 1 0 0
 调查报告|GiveItem 905020164 1 0 0
 普通钥匙链激活卡|GiveItem 905030203 1 0 0
 
-|GiveItem  1 0 0
-========== 防具与携行（809）==========
-|GiveItem  1 0 0
 勤务战术背心|GiveItem 301010117 1 0 0
 AR500复合防弹衣（CG用）|GiveItem 301010221 1 0 0
 帆布背包|GiveItem 301020001 1 0 0
@@ -25016,9 +24885,6 @@ GS2战术耳机|GiveItem 904010090 1 0 0
 黑金指挥官·Med野战背包(30天体验卡)|GiveItem 906140005 1 0 0
 黑金指挥官·03重型战术头盔(30天体验卡)|GiveItem 906140006 1 0 0
 
-|GiveItem  1 0 0
-========== 食品饮料（103）==========
-|GiveItem  1 0 0
 肉瘤探测仪|GiveItem 106000020 1 0 0
 章鱼棒球帽|GiveItem 301130004 1 0 0
 肌肉强度剂|GiveItem 401050006 1 0 0

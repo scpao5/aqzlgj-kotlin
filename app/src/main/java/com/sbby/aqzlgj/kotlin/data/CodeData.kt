@@ -26,7 +26,9 @@ object CodeData {
                             if (parts.size >= 2) {
                                 val title = parts[0].trim()
                                 val code = parts.subList(1, parts.size).joinToString("|").trim()
-                                if (title.isNotEmpty() && code.isNotEmpty() && !isMetaLine(title)) {
+                                if (title.isNotEmpty() && code.isNotEmpty() &&
+                                    !isMetaLine(title) && !isBrokenCommand(code)
+                                ) {
                                     list.add(
                                         CodeItem(
                                             title = title,
@@ -51,6 +53,13 @@ object CodeData {
     /** 过滤大杂烩.txt 开头的作者声明等非指令行 */
     private fun isMetaLine(title: String): Boolean =
         title == "声明" || title.startsWith("发现bug") || title == "此应用由是白白吖独立制作"
+
+    /** 过滤残缺指令：GiveItem/GiveWeapon 后物品 ID 明显缺失（正常 ID 至少 6 位，如 702011301） */
+    private fun isBrokenCommand(code: String): Boolean {
+        val m = Regex("^Give(Item|Weapon|Money)\\s+(\\d+)").find(code) ?: return false
+        val id = m.groupValues[2].toLongOrNull() ?: return false
+        return id < 100000
+    }
 
     fun getCategories(): List<String> = listOf("刀皮类", "战术装备", "钥匙类", "针剂类", "操作指令", CATEGORY_MIX)
 }
