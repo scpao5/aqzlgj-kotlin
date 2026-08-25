@@ -5,7 +5,7 @@ import okhttp3.Request
 
 fun checkNewVersion(): LatestVersionInfo {
     if (!isNetworkAvailable(templateApp)) return LatestVersionInfo()
-    val url = "https://api.github.com/repos/chenaizhang/aqzlgj-kotlin/releases/latest"
+    val url = "https://api.github.com/repos/scpao5/aqzlgj-kotlin/releases/latest"
     // default null value if failed
     val defaultValue = LatestVersionInfo()
     runCatching {
@@ -26,10 +26,9 @@ fun checkNewVersion(): LatestVersionInfo {
                         continue
                     }
 
-                    val regex = Regex("v(.+?)_(\\d+)-")
+                    val regex = Regex("_(\\d+)-(release|debug)\\.apk$")
                     val matchResult = regex.find(name) ?: continue
-                    matchResult.groupValues[1]
-                    val versionCode = matchResult.groupValues[2].toInt()
+                    val versionCode = matchResult.groupValues[1].toInt()
                     val downloadUrl = asset.getString("browser_download_url")
 
                     return LatestVersionInfo(
