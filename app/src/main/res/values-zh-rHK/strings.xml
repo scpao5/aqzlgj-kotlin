@@ -47,4 +47,112 @@
     <string name="settings_floating_bottom_bar_summary">使用 Apple 風格懸浮底部欄</string>
     <string name="settings_enable_glass">液態玻璃</string>
     <string name="settings_enable_glass_summary">為懸浮底部欄啟用液態玻璃效果</string>
-    </resources>
+    
+    <string name="permission_section">授權狀態</string>
+
+    <string name="permission_ready">核心權限已就緒，可正常使用相關功能。</string>
+
+    <string name="permission_missing">請先授予缺失權限。</string>
+
+    <string name="permission_storage">存儲訪問</string>
+
+    <string name="permission_notification">通知權限</string>
+
+    <string name="permission_microphone">麥克風</string>
+
+    <string name="permission_battery">電池白名單</string>
+
+    <string name="permission_overlay">懸浮窗</string>
+
+    <string name="permission_granted">已授權</string>
+
+    <string name="permission_required">必需</string>
+
+    <string name="permission_optional">可選</string>
+
+    <string name="permission_action_required">待處理</string>
+
+    <string name="permission_grant_action">去授權</string>
+
+    <string name="permission_status_ready_title">工作中</string>
+
+    <string name="permission_status_missing_title">需要完成授權</string>
+
+    <string name="cmd_copy">複製</string>
+
+    <string name="cmd_execute">執行</string>
+
+    <string name="cmd_float_window">懸浮窗</string>
+
+    <string name="cmd_float_ready">權限已授予，可在「命令」頁開啓遊戲內懸浮窗</string>
+
+    <string name="cmd_float_need">需要懸浮窗權限，點擊申請</string>
+
+    <string name="cmd_search_hint">搜索指令...</string>
+
+    <string name="cmd_count">%1$d 條指令</string>
+
+    <string name="cmd_toast_overlay">請授予懸浮窗權限</string>
+
+    <string name="cmd_toast_float_on">懸浮窗已開啓</string>
+
+    <string name="cmd_toast_float_off">懸浮窗已關閉</string>
+
+    <string name="cmd_category_empty">該分區暫無指令</string>
+
+    <string name="cmd_search_title">搜索</string>
+
+    <string name="cmd_search_placeholder">搜索指令名稱或內容...</string>
+
+    <string name="cmd_search_prompt">輸入關鍵詞搜索指令</string>
+
+    <string name="cmd_search_empty">未找到相關指令</string>
+
+    <string name="update_found">發現新版本 v%1$s</string>
+
+    <string name="update_download">點擊下載更新</string>
+
+    <string name="root_mode">Root 模式</string>
+
+    <string name="non_root_mode">免 Root 模式</string>
+
+    <string name="settings_hide_toast">隱藏 Toast 提示</string>
+
+    <string name="settings_hide_toast_summary">開啓後不再彈出 Toast 提示</string>
+
+    <string name="settings_hide_update_dialog">隱藏更新彈窗</string>
+
+    <string name="settings_hide_update_dialog_summary">開啓後不再提示應用更新</string>
+
+    <string name="settings_check_update_now">檢查更新</string>
+
+    <string name="settings_check_update_now_summary">手動檢測最新版本</string>
+
+    <string name="float_title">指令工具</string>
+
+    <string name="float_search_hint">搜索指令...</string>
+
+    <string name="float_search_btn">搜索</string>
+
+    <string name="float_add_failed">懸浮窗添加失敗</string>
+
+    <string name="float_category_list">指令分類</string>
+
+    <string name="float_search_result">搜索結果</string>
+
+    <string name="float_need_keyword">請輸入關鍵詞</string>
+
+    <string name="float_empty_category">該分區暫無指令</string>
+
+    <string name="float_empty_search">未找到相關指令</string>
+
+    <string name="float_close_title">關閉懸浮窗</string>
+
+    <string name="float_close_msg">確認要關閉懸浮窗嗎？</string>
+
+    <string name="float_cancel">取消</string>
+
+    <string name="float_confirm">確認</string>
+
+    <string name="float_notification">懸浮窗運行中</string>
+</resources>

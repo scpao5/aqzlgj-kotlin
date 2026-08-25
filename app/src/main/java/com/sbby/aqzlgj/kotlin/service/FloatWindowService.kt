@@ -53,6 +53,9 @@ class FloatWindowService : Service() {
         @Volatile
         var isRunning: Boolean = false
             private set
+
+        /** 悬浮窗列表/搜索最多渲染条数（性能保护） */
+        const val MAX_LIST_ITEMS = 200
     }
 
     /** 悬浮窗配色（跟随应用明暗主题） */
@@ -467,6 +470,12 @@ class FloatWindowService : Service() {
         ensureBackBtn()
         floatBackIv!!.visibility = View.VISIBLE
         val items = allCommands.filter { it.category == category }
+        // 性能保护：分类条目过多时只渲染前 200 条
+        val displayItems = if (items.size > MAX_LIST_ITEMS) {
+            items.subList(0, MAX_LIST_ITEMS)
+        } else {
+            items
+        }
         if (items.isEmpty()) {
             val empty = TextView(this).apply {
                 text = getString(R.string.float_empty_category)
@@ -476,7 +485,16 @@ class FloatWindowService : Service() {
             }
             floatListContainer!!.addView(empty)
         } else {
-            items.forEach { addItemRow(null, it.title, it.code) }
+            if (items.size > MAX_LIST_ITEMS) {
+                val hint = TextView(this).apply {
+                    text = "内容较多，仅显示前 $MAX_LIST_ITEMS 条"
+                    textSize = 11f
+                    setTextColor(c.hint)
+                    setPadding(dp(6), dp(6), dp(6), dp(2))
+                }
+                floatListContainer!!.addView(hint)
+            }
+            displayItems.forEach { addItemRow(null, it.title, it.code) }
         }
         scrollListToTop()
         updateLayoutByContent()
@@ -507,6 +525,12 @@ class FloatWindowService : Service() {
             it.category != CodeData.CATEGORY_MIX &&
                 (it.title.contains(kw, ignoreCase = true) || it.code.contains(kw, ignoreCase = true))
         }
+        // 性能保护：结果过多时只渲染前 200 条，避免全量建 View 卡顿
+        val displayResults = if (results.size > MAX_LIST_ITEMS) {
+            results.subList(0, MAX_LIST_ITEMS)
+        } else {
+            results
+        }
         if (results.isEmpty()) {
             val empty = TextView(this).apply {
                 text = getString(R.string.float_empty_search)
@@ -516,7 +540,16 @@ class FloatWindowService : Service() {
             }
             floatListContainer!!.addView(empty)
         } else {
-            results.forEach { addItemRow(it.category, it.title, it.code) }
+            if (results.size > MAX_LIST_ITEMS) {
+                val hint = TextView(this).apply {
+                    text = "结果过多，仅显示前 $MAX_LIST_ITEMS 条"
+                    textSize = 11f
+                    setTextColor(c.hint)
+                    setPadding(dp(6), dp(6), dp(6), dp(2))
+                }
+                floatListContainer!!.addView(hint)
+            }
+            displayResults.forEach { addItemRow(it.category, it.title, it.code) }
         }
         scrollListToTop()
         updateLayoutByContent()
