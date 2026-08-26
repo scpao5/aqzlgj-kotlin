@@ -19,7 +19,7 @@
     <string name="settings">设置</string>
     <string name="about">关于</string>
     <string name="send_log">发送日志</string>
-    <string name="settings_check_update">检查更新</string>
+    <string name="settings_check_update">自动检测更新</string>
     <string name="settings_check_update_summary">在应用启动后自动检查是否有最新版</string>
     <string name="settings_enable_predictive_back">预测性返回手势</string>
     <string name="settings_enable_predictive_back_summary">启用对预测性返回手势的支持</string>
@@ -85,7 +85,7 @@
     <string name="settings_hide_toast_summary">开启后不再弹出 Toast 提示</string>
     <string name="settings_hide_update_dialog">隐藏更新弹窗</string>
     <string name="settings_hide_update_dialog_summary">开启后不再提示应用更新</string>
-    <string name="settings_check_update_now">检查更新</string>
+    <string name="settings_check_update_now">手动检测更新</string>
     <string name="settings_check_update_now_summary">手动检测最新版本</string>
     <string name="float_title">指令工具</string>
     <string name="float_search_hint">搜索指令...</string>
@@ -101,4 +101,17 @@
     <string name="float_cancel">取消</string>
     <string name="float_confirm">确认</string>
     <string name="float_notification">悬浮窗运行中</string>
+    <string name="cmd_toast_copied">复制成功</string>
+    <string name="cmd_toast_executed">执行成功</string>
+    <string name="settings_custom_icon_name">快捷方式名称</string>
+    <string name="settings_custom_icon">自定义图标</string>
+    <string name="settings_custom_icon_summary">选择图片生成带图标的桌面快捷方式</string>
+    <string name="custom_icon_shortcut_name">暗区指令 %1$d</string>
+    <string name="cmd_toast_icon_added">图标快捷方式已添加，长按可固定到桌面</string>
+    <string name="icon_remove">删除</string>
+    <string name="icon_removed">已删除</string>
+    <string name="icon_cleared_all">已清除全部图标快捷方式</string>
+    <string name="icon_pinned_hint">已固定到桌面的图标请在桌面长按手动删除</string>
+    <string name="icon_clear_all">清除全部</string>
+    <string name="cmd_toast_icon_failed">图片读取失败</string>
 </resources>

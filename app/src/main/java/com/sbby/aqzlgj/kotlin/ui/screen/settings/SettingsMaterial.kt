@@ -16,6 +16,7 @@ import androidx.compose.material.icons.filled.BugReport
 import androidx.compose.material.icons.filled.ContactPage
 import androidx.compose.material.icons.filled.Palette
 import androidx.compose.material.icons.filled.NotificationsOff
+import androidx.compose.material.icons.filled.PhotoLibrary
 import androidx.compose.material.icons.filled.Update
 import androidx.compose.material.icons.filled.UpdateDisabled
 import androidx.compose.material.icons.rounded.Dashboard
@@ -89,12 +90,15 @@ fun SettingPagerMaterial(
                         )
                     },
                     {
-                        SegmentedSwitchItem(
-                            icon = Icons.Filled.NotificationsOff,
-                            title = stringResource(R.string.settings_hide_toast),
-                            summary = stringResource(R.string.settings_hide_toast_summary),
-                            checked = uiState.hideToast,
-                            onCheckedChange = actions.onSetHideToast
+                        SegmentedListItem(
+                            onClick = actions.onCheckUpdateNow,
+                            headlineContent = { Text(stringResource(R.string.settings_check_update_now)) },
+                            leadingContent = {
+                                Icon(
+                                    Icons.Filled.Update,
+                                    stringResource(R.string.settings_check_update_now)
+                                )
+                            },
                         )
                     },
                     {
@@ -106,18 +110,6 @@ fun SettingPagerMaterial(
                             onCheckedChange = actions.onSetHideUpdateDialog
                         )
                     },
-                    {
-                        SegmentedListItem(
-                            onClick = actions.onCheckUpdateNow,
-                            headlineContent = { Text(stringResource(R.string.settings_check_update_now)) },
-                            leadingContent = {
-                                Icon(
-                                    Icons.Filled.Update,
-                                    stringResource(R.string.settings_check_update_now)
-                                )
-                            },
-                        )
-                    }
                 )
             )
 
@@ -146,6 +138,15 @@ fun SettingPagerMaterial(
                                     null
                                 )
                             }
+                        )
+                    }
+                    add {
+                        SegmentedSwitchItem(
+                            icon = Icons.Filled.NotificationsOff,
+                            title = stringResource(R.string.settings_hide_toast),
+                            summary = stringResource(R.string.settings_hide_toast_summary),
+                            checked = uiState.hideToast,
+                            onCheckedChange = actions.onSetHideToast
                         )
                     }
                 }

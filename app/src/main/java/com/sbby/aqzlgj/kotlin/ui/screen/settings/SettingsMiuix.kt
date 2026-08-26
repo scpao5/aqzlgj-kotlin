@@ -18,6 +18,7 @@ import androidx.compose.material.icons.rounded.BugReport
 import androidx.compose.material.icons.rounded.ContactPage
 import androidx.compose.material.icons.rounded.Dashboard
 import androidx.compose.material.icons.rounded.NotificationsOff
+import androidx.compose.material.icons.rounded.PhotoLibrary
 import androidx.compose.material.icons.rounded.UpdateDisabled
 import androidx.compose.material.icons.rounded.Palette
 import androidx.compose.material.icons.rounded.Update
@@ -112,26 +113,18 @@ fun SettingPagerMiuix(
                             checked = uiState.checkUpdate,
                             onCheckedChange = actions.onSetCheckUpdate
                         )
-                    }
-
-                    Card(
-                        modifier = Modifier
-                            .padding(top = 12.dp)
-                            .fillMaxWidth(),
-                    ) {
-                        SwitchPreference(
-                            title = stringResource(R.string.settings_hide_toast),
-                            summary = stringResource(R.string.settings_hide_toast_summary),
+                        ArrowPreference(
+                            title = stringResource(R.string.settings_check_update_now),
+                            summary = stringResource(R.string.settings_check_update_now_summary),
                             startAction = {
                                 Icon(
-                                    Icons.Rounded.NotificationsOff,
+                                    Icons.Rounded.Update,
                                     modifier = Modifier.padding(end = 6.dp),
-                                    contentDescription = stringResource(R.string.settings_hide_toast),
+                                    contentDescription = stringResource(R.string.settings_check_update_now),
                                     tint = colorScheme.onBackground
                                 )
                             },
-                            checked = uiState.hideToast,
-                            onCheckedChange = actions.onSetHideToast
+                            onClick = actions.onCheckUpdateNow
                         )
                         SwitchPreference(
                             title = stringResource(R.string.settings_hide_update_dialog),
@@ -146,19 +139,6 @@ fun SettingPagerMiuix(
                             },
                             checked = uiState.hideUpdateDialog,
                             onCheckedChange = actions.onSetHideUpdateDialog
-                        )
-                        ArrowPreference(
-                            title = stringResource(R.string.settings_check_update_now),
-                            summary = stringResource(R.string.settings_check_update_now_summary),
-                            startAction = {
-                                Icon(
-                                    Icons.Rounded.Update,
-                                    modifier = Modifier.padding(end = 6.dp),
-                                    contentDescription = stringResource(R.string.settings_check_update_now),
-                                    tint = colorScheme.onBackground
-                                )
-                            },
-                            onClick = actions.onCheckUpdateNow
                         )
                     }
 
@@ -194,6 +174,20 @@ fun SettingPagerMiuix(
                                 )
                             },
                             onClick = actions.onOpenTheme
+                        )
+                        SwitchPreference(
+                            title = stringResource(R.string.settings_hide_toast),
+                            summary = stringResource(R.string.settings_hide_toast_summary),
+                            startAction = {
+                                Icon(
+                                    Icons.Rounded.NotificationsOff,
+                                    modifier = Modifier.padding(end = 6.dp),
+                                    contentDescription = stringResource(R.string.settings_hide_toast),
+                                    tint = colorScheme.onBackground
+                                )
+                            },
+                            checked = uiState.hideToast,
+                            onCheckedChange = actions.onSetHideToast
                         )
                     }
 

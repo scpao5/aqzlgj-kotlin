@@ -41,6 +41,9 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
+import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.PhotoLibrary
 import androidx.compose.material.icons.automirrored.rounded.MenuOpen
 import androidx.compose.material.icons.filled.Brightness1
 import androidx.compose.material.icons.filled.Brightness3
@@ -91,6 +94,7 @@ import com.materialkolor.dynamiccolor.ColorSpec
 import com.materialkolor.rememberDynamicColorScheme
 import com.sbby.aqzlgj.kotlin.R
 import com.sbby.aqzlgj.kotlin.ui.component.material.SegmentedColumn
+import com.sbby.aqzlgj.kotlin.ui.component.material.SegmentedListItem
 import com.sbby.aqzlgj.kotlin.ui.component.material.SegmentedDropdownItem
 import com.sbby.aqzlgj.kotlin.ui.component.material.SegmentedSwitchItem
 import com.sbby.aqzlgj.kotlin.ui.component.material.TonalCard
@@ -280,6 +284,68 @@ fun ColorPaletteScreenMaterial(
                                 )
                             }
                         )
+                    )
+                }
+
+                SegmentedColumn(
+                    modifier = Modifier.padding(top = 4.dp),
+                    content = listOf(
+                        {
+                            SegmentedListItem(
+                                onClick = actions.onPickCustomIcon,
+                                headlineContent = { Text(stringResource(R.string.settings_custom_icon)) },
+                                supportingContent = { Text(stringResource(R.string.settings_custom_icon_summary)) },
+                                leadingContent = {
+                                    Icon(
+                                        Icons.Filled.PhotoLibrary,
+                                        stringResource(R.string.settings_custom_icon)
+                                    )
+                                },
+                                trailingContent = {
+                                    Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, null)
+                                },
+                            )
+                        }
+                    )
+                )
+
+                Text(
+                    text = stringResource(R.string.icon_pinned_hint),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.outline,
+                    modifier = Modifier.padding(horizontal = 20.dp, vertical = 4.dp),
+                )
+
+                if (state.iconShortcuts.isNotEmpty()) {
+                    SegmentedColumn(
+                        modifier = Modifier.padding(top = 4.dp),
+                        content = buildList {
+                            state.iconShortcuts.forEach { sc ->
+                                add {
+                                    SegmentedListItem(
+                                        onClick = {},
+                                        headlineContent = { Text(sc.shortLabel.toString()) },
+                                        leadingContent = {
+                                            Icon(Icons.Filled.Delete, stringResource(R.string.icon_remove))
+                                        },
+                                        trailingContent = {
+                                            IconButton(onClick = { actions.onRemoveIconShortcut(sc.id) }) {
+                                                Icon(Icons.Filled.Delete, stringResource(R.string.icon_remove))
+                                            }
+                                        },
+                                    )
+                                }
+                            }
+                            add {
+                                SegmentedListItem(
+                                    onClick = actions.onClearIconShortcuts,
+                                    headlineContent = { Text(stringResource(R.string.icon_clear_all)) },
+                                    leadingContent = {
+                                        Icon(Icons.Filled.Delete, stringResource(R.string.icon_clear_all))
+                                    },
+                                )
+                            }
+                        }
                     )
                 }
 

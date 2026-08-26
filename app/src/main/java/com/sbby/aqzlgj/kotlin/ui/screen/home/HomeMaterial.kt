@@ -158,7 +158,13 @@ private fun PermissionCard(
             ) {
                 Column(modifier = Modifier.weight(1f)) {
                     Text(
-                        text = stringResource(R.string.permission_section),
+                        text = stringResource(
+                            if (state.requiredGranted) {
+                                R.string.permission_status_ready_title
+                            } else {
+                                R.string.permission_status_missing_title
+                            }
+                        ),
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.SemiBold,
                     )

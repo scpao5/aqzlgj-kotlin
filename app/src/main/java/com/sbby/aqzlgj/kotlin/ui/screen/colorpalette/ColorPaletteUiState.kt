@@ -1,6 +1,7 @@
 package com.sbby.aqzlgj.kotlin.ui.screen.colorpalette
 
 import androidx.compose.runtime.Immutable
+import androidx.core.content.pm.ShortcutInfoCompat
 import com.materialkolor.PaletteStyle
 import com.materialkolor.dynamiccolor.ColorSpec
 import com.sbby.aqzlgj.kotlin.ui.screen.settings.SettingsUiState
@@ -12,6 +13,7 @@ data class ColorPaletteUiState(
     val currentColorMode: ColorMode,
     val currentPaletteStyle: PaletteStyle,
     val currentColorSpec: ColorSpec.SpecVersion,
+    val iconShortcuts: List<ShortcutInfoCompat> = emptyList(),
 )
 
 @Immutable
@@ -28,4 +30,7 @@ data class ColorPaletteScreenActions(
     val onSetEnableFloatingBottomBarBlur: (Boolean) -> Unit,
     val onSetEnablePredictiveBack: (Boolean) -> Unit,
     val onSetPageScale: (Float) -> Unit,
+    val onPickCustomIcon: () -> Unit,
+    val onRemoveIconShortcut: (String) -> Unit,
+    val onClearIconShortcuts: () -> Unit,
 )

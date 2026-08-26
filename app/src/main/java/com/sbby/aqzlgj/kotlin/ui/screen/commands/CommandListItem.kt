@@ -34,6 +34,7 @@ import com.sbby.aqzlgj.kotlin.R
 import com.sbby.aqzlgj.kotlin.data.CodeItem
 import com.sbby.aqzlgj.kotlin.data.PrivilegeManager
 import com.sbby.aqzlgj.kotlin.ui.LocalUiMode
+import com.sbby.aqzlgj.kotlin.ui.util.AppToast
 import com.sbby.aqzlgj.kotlin.ui.UiMode
 import top.yukonga.miuix.kmp.basic.Card as MiuixCard
 import top.yukonga.miuix.kmp.basic.CardDefaults as MiuixCardDefaults
@@ -45,11 +46,13 @@ import top.yukonga.miuix.kmp.theme.MiuixTheme
 fun copyCommand(context: Context, item: CodeItem) {
     val cm = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
     cm.setPrimaryClip(ClipData.newPlainText(item.title, item.code))
+    AppToast.show(context, context.getString(R.string.cmd_toast_copied))
 }
 
 /** 执行指令（root 广播优先，失败回退普通广播，不弹 Toast） */
 fun executeCommand(context: Context, item: CodeItem) {
     PrivilegeManager.execute(context, item.code)
+    AppToast.show(context, context.getString(R.string.cmd_toast_executed))
 }
 
 /** 指令卡片：按 UI 模式分发 Miuix / Material 两套风格 */

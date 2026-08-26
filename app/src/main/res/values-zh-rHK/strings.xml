@@ -4,7 +4,7 @@
     <string name="settings">設定</string>
     <string name="about">關於</string>
     <string name="send_log">傳送日誌</string>
-    <string name="settings_check_update">檢查更新</string>
+    <string name="settings_check_update">自動檢查更新</string>
     <string name="settings_check_update_summary">開啟本程式時自動檢查更新</string>
     <string name="save_log">儲存日誌</string>
     <string name="processing">處理中…</string>
@@ -124,7 +124,7 @@
 
     <string name="settings_hide_update_dialog_summary">開啓後不再提示應用更新</string>
 
-    <string name="settings_check_update_now">檢查更新</string>
+    <string name="settings_check_update_now">手動檢查更新</string>
 
     <string name="settings_check_update_now_summary">手動檢測最新版本</string>
 
@@ -155,4 +155,17 @@
     <string name="float_confirm">確認</string>
 
     <string name="float_notification">懸浮窗運行中</string>
+    <string name="cmd_toast_copied">複製成功</string>
+    <string name="cmd_toast_executed">執行成功</string>
+    <string name="settings_custom_icon_name">捷徑名稱</string>
+    <string name="settings_custom_icon">自訂圖示</string>
+    <string name="settings_custom_icon_summary">選擇圖片生成帶圖示的桌面捷徑</string>
+    <string name="custom_icon_shortcut_name">暗區指令 %1$d</string>
+    <string name="cmd_toast_icon_added">圖示捷徑已新增，長按可固定到桌面</string>
+    <string name="icon_remove">刪除</string>
+    <string name="icon_removed">已刪除</string>
+    <string name="icon_cleared_all">已清除全部圖示捷徑</string>
+    <string name="icon_pinned_hint">已固定到桌面的圖示請在桌面長按手動刪除</string>
+    <string name="icon_clear_all">清除全部</string>
+    <string name="cmd_toast_icon_failed">圖片讀取失敗</string>
 </resources>

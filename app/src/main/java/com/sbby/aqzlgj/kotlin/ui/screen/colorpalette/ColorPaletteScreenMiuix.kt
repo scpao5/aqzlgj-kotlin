@@ -34,9 +34,11 @@ import androidx.compose.material.icons.rounded.AspectRatio
 import androidx.compose.material.icons.rounded.BlurOn
 import androidx.compose.material.icons.rounded.CallToAction
 import androidx.compose.material.icons.rounded.Colorize
+import androidx.compose.material.icons.rounded.Delete
 import androidx.compose.material.icons.rounded.DesignServices
 import androidx.compose.material.icons.rounded.Style
 import androidx.compose.material.icons.rounded.Wallpaper
+import androidx.compose.material.icons.rounded.PhotoLibrary
 import androidx.compose.material.icons.rounded.WaterDrop
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -66,12 +68,14 @@ import com.sbby.aqzlgj.kotlin.ui.theme.LocalEnableBlur
 import com.sbby.aqzlgj.kotlin.ui.theme.keyColorOptions
 import com.sbby.aqzlgj.kotlin.ui.util.BlurredBar
 import com.sbby.aqzlgj.kotlin.ui.util.rememberBlurBackdrop
+import top.yukonga.miuix.kmp.basic.BasicComponent
 import top.yukonga.miuix.kmp.basic.Card
 import top.yukonga.miuix.kmp.basic.Icon
 import top.yukonga.miuix.kmp.basic.IconButton
 import top.yukonga.miuix.kmp.basic.MiuixScrollBehavior
 import top.yukonga.miuix.kmp.basic.Scaffold
 import top.yukonga.miuix.kmp.basic.Slider
+import top.yukonga.miuix.kmp.basic.TextButton
 import top.yukonga.miuix.kmp.basic.SliderDefaults
 import top.yukonga.miuix.kmp.basic.TabRow
 import top.yukonga.miuix.kmp.basic.Text
@@ -401,6 +405,52 @@ fun ColorPaletteScreenMiuix(
                             onVolumeChange = {
                                 actions.onSetPageScale(it)
                             }
+                        )
+                    }
+                    Card(
+                        modifier = Modifier
+                            .padding(top = 12.dp)
+                            .fillMaxWidth(),
+                    ) {
+                        ArrowPreference(
+                            title = stringResource(id = R.string.settings_custom_icon),
+                            summary = stringResource(id = R.string.settings_custom_icon_summary),
+                            startAction = {
+                                Icon(
+                                    Icons.Rounded.PhotoLibrary,
+                                    modifier = Modifier.padding(end = 6.dp),
+                                    contentDescription = stringResource(id = R.string.settings_custom_icon),
+                                    tint = colorScheme.onBackground
+                                )
+                            },
+                            onClick = actions.onPickCustomIcon
+                        )
+                        if (state.iconShortcuts.isNotEmpty()) {
+                            state.iconShortcuts.forEach { sc ->
+                                BasicComponent(
+                                    title = sc.shortLabel.toString(),
+                                    endActions = {
+                                        IconButton(onClick = { actions.onRemoveIconShortcut(sc.id) }) {
+                                            Icon(
+                                                Icons.Rounded.Delete,
+                                                contentDescription = stringResource(R.string.icon_remove),
+                                                tint = colorScheme.error,
+                                            )
+                                        }
+                                    },
+                                )
+                            }
+                            TextButton(
+                                text = stringResource(R.string.icon_clear_all),
+                                onClick = actions.onClearIconShortcuts,
+                                modifier = Modifier.padding(start = 12.dp, end = 12.dp, top = 4.dp, bottom = 8.dp),
+                            )
+                        }
+                        Text(
+                            text = stringResource(R.string.icon_pinned_hint),
+                            modifier = Modifier.padding(start = 20.dp, end = 20.dp, bottom = 10.dp),
+                            color = colorScheme.onSurfaceVariantSummary,
+                            fontSize = 11.sp,
                         )
                     }
                 }
