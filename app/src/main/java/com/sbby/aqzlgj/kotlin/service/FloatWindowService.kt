@@ -115,6 +115,10 @@ class FloatWindowService : Service() {
         startInForeground()
 
         allCommands = runBlocking(Dispatchers.IO) { CodeData.loadCodes(this@FloatWindowService) }
+        // 后台触发 root 检测：悬浮窗执行指令时 root 模式才能生效
+        Thread {
+            runBlocking { PrivilegeManager.checkRoot() }
+        }.start()
         showFloatWindow()
     }
 

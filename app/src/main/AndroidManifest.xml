@@ -8,6 +8,10 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <!-- 创建桌面快捷方式(国产 ROM 会将其纳入权限管理) -->
+    <uses-permission
+        android:name="com.android.launcher.permission.INSTALL_SHORTCUT"
+        tools:ignore="ProtectedPermissions" />
 
     <uses-sdk tools:overrideLibrary="top.yukonga.miuix.kmp.blur" />
 
@@ -42,6 +46,10 @@
                 android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
                 android:value="悬浮窗指令工具" />
         </service>
+
+        <receiver
+            android:name=".ui.util.PinShortcutReceiver"
+            android:exported="false" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

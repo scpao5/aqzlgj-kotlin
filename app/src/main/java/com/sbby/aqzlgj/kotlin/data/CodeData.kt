@@ -54,9 +54,10 @@ object CodeData {
     private fun isMetaLine(title: String): Boolean =
         title == "声明" || title.startsWith("发现bug") || title == "此应用由是白白吖独立制作"
 
-    /** 过滤残缺指令：GiveItem/GiveWeapon 后物品 ID 明显缺失（正常 ID 至少 6 位，如 702011301） */
+    /** 过滤残缺指令：仅 GiveItem/GiveMoney 的物品 ID 明显缺失（正常 ID 至少 6 位，如 702011301）。
+     *  GiveWeapon 使用短编号（如 019/801/203）且有效，不做长度校验。 */
     private fun isBrokenCommand(code: String): Boolean {
-        val m = Regex("^Give(Item|Weapon|Money)\\s+(\\d+)").find(code) ?: return false
+        val m = Regex("^Give(Item|Money)\\s+(\\d+)").find(code) ?: return false
         val id = m.groupValues[2].toLongOrNull() ?: return false
         return id < 100000
     }

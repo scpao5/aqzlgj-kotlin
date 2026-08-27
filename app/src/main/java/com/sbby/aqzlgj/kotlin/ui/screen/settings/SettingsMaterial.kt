@@ -17,6 +17,7 @@ import androidx.compose.material.icons.filled.ContactPage
 import androidx.compose.material.icons.filled.Palette
 import androidx.compose.material.icons.filled.NotificationsOff
 import androidx.compose.material.icons.filled.PhotoLibrary
+import androidx.compose.material.icons.filled.Shield
 import androidx.compose.material.icons.filled.Update
 import androidx.compose.material.icons.filled.UpdateDisabled
 import androidx.compose.material.icons.rounded.Dashboard
@@ -155,6 +156,18 @@ fun SettingPagerMaterial(
             SegmentedColumn(
                 modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
                 content = listOf(
+                    {
+                        SegmentedListItem(
+                            onClick = actions.onOpenPermissions,
+                            headlineContent = { Text(stringResource(id = R.string.settings_permissions)) },
+                            leadingContent = {
+                                Icon(
+                                    Icons.Filled.Shield,
+                                    stringResource(id = R.string.settings_permissions)
+                                )
+                            },
+                        )
+                    },
                     {
                         SegmentedListItem(
                             onClick = { showBottomSheet = true },

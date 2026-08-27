@@ -30,6 +30,7 @@ data class SettingsScreenActions(
     val onOpenTheme: () -> Unit,
     val onSetUiModeIndex: (Int) -> Unit,
     val onOpenAbout: () -> Unit,
+    val onOpenPermissions: () -> Unit,
     val onSetHideToast: (Boolean) -> Unit,
     val onSetHideUpdateDialog: (Boolean) -> Unit,
     val onCheckUpdateNow: () -> Unit,

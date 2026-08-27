@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.Path
+import android.app.PendingIntent
 import android.graphics.RectF
 import android.net.Uri
 import androidx.core.content.pm.ShortcutInfoCompat
@@ -78,6 +79,36 @@ object IconShortcutManager {
     /** 本应用添加的全部自定义图标快捷方式 */
     fun getIconShortcuts(context: Context): List<ShortcutInfoCompat> =
         ShortcutManagerCompat.getDynamicShortcuts(context).filter { it.id.startsWith(ID_PREFIX) }
+
+    /** 尝试自动固定到桌面(requestPinShortcut)：国产 ROM 首次会动态申请"创建桌面快捷方式"权限 */
+    fun pinToDesktop(
+        context: Context,
+        id: String,
+        name: String,
+        icon: Bitmap,
+    ): Boolean {
+        if (!ShortcutManagerCompat.isRequestPinShortcutSupported(context)) {
+            return false
+        }
+        val intent = Intent(context, MainActivity::class.java).apply {
+            action = Intent.ACTION_MAIN
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        }
+        val shortcut = ShortcutInfoCompat.Builder(context, id)
+            .setShortLabel(name)
+            .setLongLabel(name)
+            .setIcon(IconCompat.createWithBitmap(icon))
+            .setIntent(intent)
+            .build()
+        val callbackIntent = Intent(context, PinShortcutReceiver::class.java)
+        val callback = PendingIntent.getBroadcast(
+            context,
+            0,
+            callbackIntent,
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_MUTABLE
+        )
+        return ShortcutManagerCompat.requestPinShortcut(context, shortcut, callback.intentSender)
+    }
 
     /** 删除单个自定义图标快捷方式 */
     fun removeIconShortcut(context: Context, id: String) {

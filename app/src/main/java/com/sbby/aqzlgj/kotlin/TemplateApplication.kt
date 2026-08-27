@@ -27,7 +27,17 @@ class TemplateApplication : Application(), ViewModelStoreOwner {
         }
     }
 
-    lateinit var okhttpClient: OkHttpClient
+    /** 延迟初始化：即使锁屏期(direct boot) onCreate 提前返回，首次访问时也会完成初始化 */
+    val okhttpClient: OkHttpClient by lazy {
+        OkHttpClient.Builder().cache(Cache(File(cacheDir, "okhttp"), 10 * 1024 * 1024))
+            .addInterceptor { block ->
+                block.proceed(
+                    block.request().newBuilder()
+                        .header("User-Agent", "aqzlgj-kotlin/${BuildConfig.VERSION_CODE}")
+                        .header("Accept-Language", Locale.getDefault().toLanguageTag()).build()
+                )
+            }.build()
+    }
     private val appViewModelStore by lazy { ViewModelStore() }
 
     private fun isUserUnlocked(): Boolean =
@@ -48,15 +58,6 @@ class TemplateApplication : Application(), ViewModelStoreOwner {
             setEnableOnBackInvokedCallback(applicationInfo, enable)
         }
 
-        okhttpClient =
-            OkHttpClient.Builder().cache(Cache(File(cacheDir, "okhttp"), 10 * 1024 * 1024))
-                .addInterceptor { block ->
-                    block.proceed(
-                        block.request().newBuilder()
-                            .header("User-Agent", "aqzlgj-kotlin/${BuildConfig.VERSION_CODE}")
-                            .header("Accept-Language", Locale.getDefault().toLanguageTag()).build()
-                    )
-                }.build()
     }
 
     override val viewModelStore: ViewModelStore

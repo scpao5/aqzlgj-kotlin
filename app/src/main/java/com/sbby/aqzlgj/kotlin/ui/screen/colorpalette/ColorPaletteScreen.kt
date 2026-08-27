@@ -23,6 +23,7 @@ import com.materialkolor.dynamiccolor.ColorSpec
 import com.sbby.aqzlgj.kotlin.R
 import com.sbby.aqzlgj.kotlin.TemplateApplication
 import com.sbby.aqzlgj.kotlin.ui.LocalUiMode
+import com.sbby.aqzlgj.kotlin.ui.component.miuix.AddedIconDialog
 import com.sbby.aqzlgj.kotlin.ui.component.miuix.IconNameDialog
 import com.sbby.aqzlgj.kotlin.ui.UiMode
 import com.sbby.aqzlgj.kotlin.ui.navigation3.LocalNavigator
@@ -52,12 +53,13 @@ fun ColorPaletteScreen() {
     var showNameDialog by remember { mutableStateOf(false) }
     var iconName by remember { mutableStateOf("") }
     var iconShortcuts by remember { mutableStateOf(IconShortcutManager.getIconShortcuts(context)) }
+    var showAddedDialog by remember { mutableStateOf(false) }
+    var addedName by remember { mutableStateOf("") }
     val refreshIconShortcuts: () -> Unit = {
         iconShortcuts = IconShortcutManager.getIconShortcuts(context)
     }
     val dismissIconDialog: () -> Unit = {
         showNameDialog = false
-        pendingIcon?.recycle()
         pendingIcon = null
     }
     val confirmIconName: (String) -> Unit = { name ->
@@ -68,13 +70,16 @@ fun ColorPaletteScreen() {
             )
         }
         pendingIcon?.let {
-            IconShortcutManager.addIconShortcut(context, finalName, it)
-            it.recycle()
+            val id = IconShortcutManager.addIconShortcut(context, finalName, it)
+            // 尝试自动固定到桌面(首次会动态申请"创建桌面快捷方式"权限)
+            // 注意：requestPinShortcut 为异步 IPC，位图不手动 recycle，交给 GC 避免 Launcher 解码黑图
+            IconShortcutManager.pinToDesktop(context, id, finalName, it)
         }
         pendingIcon = null
         showNameDialog = false
         refreshIconShortcuts()
-        AppToast.show(context, context.getString(R.string.cmd_toast_icon_added))
+        addedName = finalName
+        showAddedDialog = true
     }
 
     val state = ColorPaletteUiState(
@@ -129,6 +134,26 @@ fun ColorPaletteScreen() {
                 dismissButton = {
                     TextButton(onClick = { dismissIconDialog() }) {
                         Text(stringResource(R.string.float_cancel))
+                    }
+                }
+            )
+        }
+    }
+
+    if (showAddedDialog) {
+        when (LocalUiMode.current) {
+            UiMode.Miuix -> AddedIconDialog(
+                show = true,
+                shortcutName = addedName,
+                onDismiss = { showAddedDialog = false },
+            )
+            UiMode.Material -> AlertDialog(
+                onDismissRequest = { showAddedDialog = false },
+                title = { Text(stringResource(R.string.icon_added_title)) },
+                text = { Text(stringResource(R.string.icon_added_msg, addedName)) },
+                confirmButton = {
+                    TextButton(onClick = { showAddedDialog = false }) {
+                        Text(stringResource(R.string.confirm))
                     }
                 }
             )

@@ -14,7 +14,10 @@ import java.io.InputStreamReader
  * - 无 root：直接 sendBroadcast
  */
 object PrivilegeManager {
+    @Volatile
     private var hasSu = false
+
+    @Volatile
     private var checked = false
 
     suspend fun checkRoot(): Boolean = withContext(Dispatchers.IO) {

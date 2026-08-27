@@ -19,6 +19,7 @@ import androidx.compose.material.icons.rounded.ContactPage
 import androidx.compose.material.icons.rounded.Dashboard
 import androidx.compose.material.icons.rounded.NotificationsOff
 import androidx.compose.material.icons.rounded.PhotoLibrary
+import androidx.compose.material.icons.rounded.Shield
 import androidx.compose.material.icons.rounded.UpdateDisabled
 import androidx.compose.material.icons.rounded.Palette
 import androidx.compose.material.icons.rounded.Update
@@ -207,6 +208,18 @@ fun SettingPagerMiuix(
                                 )
                             },
                             onClick = { showSendLogDialog.value = true },
+                        )
+                        ArrowPreference(
+                            title = stringResource(id = R.string.settings_permissions),
+                            startAction = {
+                                Icon(
+                                    Icons.Rounded.Shield,
+                                    modifier = Modifier.padding(end = 6.dp),
+                                    contentDescription = stringResource(id = R.string.settings_permissions),
+                                    tint = colorScheme.onBackground
+                                )
+                            },
+                            onClick = actions.onOpenPermissions,
                         )
                         SendLogDialog(
                             show = showSendLogDialog.value,
