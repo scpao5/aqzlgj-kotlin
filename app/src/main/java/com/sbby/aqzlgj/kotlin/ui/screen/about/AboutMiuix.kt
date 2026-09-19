@@ -175,7 +175,11 @@ private fun AboutContent(
     val layoutDirection = LocalLayoutDirection.current
     val density = LocalDensity.current
 
-    val backdrop = rememberLayerBackdrop()
+    val backdrop = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+        rememberLayerBackdrop()
+    } else {
+        null
+    }
 
     val isInDark = isInDarkTheme()
     val enableBlur = LocalEnableBlur.current
@@ -258,7 +262,7 @@ private fun AboutContent(
     BgEffectBackground(
         dynamicBackground = effectBackground,
         modifier = Modifier.fillMaxSize(),
-        bgModifier = Modifier.layerBackdrop(backdrop),
+        bgModifier = if (backdrop != null) Modifier.layerBackdrop(backdrop) else Modifier,
         isFullSize = true,
         effectBackground = effectBackground,
         alpha = { 1f - scrollProgress },
@@ -311,7 +315,7 @@ private fun AboutContent(
                         scaleY = 1 - (projectNameProgress * 0.05f)
                     }
                     .then(
-                        if (enableBlur) {
+                        if (enableBlur && backdrop != null) {
                             Modifier.textureBlur(
                                 backdrop = backdrop,
                                 shape = RoundedCornerShape(0.dp),
@@ -394,7 +398,7 @@ private fun AboutContent(
                         modifier = Modifier
                             .padding(horizontal = 12.dp)
                             .then(
-                                if (enableBlur) {
+                                if (enableBlur && backdrop != null) {
                                     Modifier.textureBlur(
                                         backdrop = backdrop,
                                         shape = RoundedCornerShape(16.dp),

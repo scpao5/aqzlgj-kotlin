@@ -2,6 +2,8 @@
 
 package com.sbby.aqzlgj.kotlin.ui.component
 
+import android.os.Build
+
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.EaseOut
 import androidx.compose.animation.core.spring
@@ -179,7 +181,7 @@ fun FloatingBottomBar(
     modifier: Modifier = Modifier,
     selectedIndex: () -> Int,
     onSelected: (index: Int) -> Unit,
-    backdrop: Backdrop,
+    backdrop: Backdrop?,
     tabsCount: Int,
     isBlurEnabled: Boolean = true,
     content: @Composable RowScope.() -> Unit
@@ -190,7 +192,11 @@ fun FloatingBottomBar(
     val surfaceContainer = MiuixTheme.colorScheme.surfaceContainer
     val containerColor = if (isBlurEnabled) surfaceContainer.copy(0.4f) else surfaceContainer
 
-    val tabsBackdrop = rememberLayerBackdrop()
+    val tabsBackdrop = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+        rememberLayerBackdrop()
+    } else {
+        null
+    }
     val density = LocalDensity.current
     val isLtr = LocalLayoutDirection.current == LayoutDirection.Ltr
     val animationScope = rememberCoroutineScope()
@@ -290,7 +296,7 @@ fun FloatingBottomBar(
     val baseHighlight = rememberGravityRotatedHighlight(iosIndicatorSpecular, extraDegrees = -45f)
     val pillHighlight = rememberGravityRotatedHighlight(iosIndicatorSpecular, extraDegrees = 90f)
 
-    val combinedBackdrop = rememberCombinedBackdrop(backdrop, tabsBackdrop)
+    val combinedBackdrop = if (backdrop != null && tabsBackdrop != null) rememberCombinedBackdrop(backdrop, tabsBackdrop) else null
 
     Box(
         modifier = modifier.width(IntrinsicSize.Min),
@@ -318,7 +324,7 @@ fun FloatingBottomBar(
                     onClick = {}
                 )
                 .then(
-                    if (isBlurEnabled) {
+                    if (isBlurEnabled && backdrop != null) {
                         Modifier.drawBackdrop(
                             backdrop = backdrop,
                             shape = { pillShape },
@@ -360,9 +366,9 @@ fun FloatingBottomBar(
                     Modifier
                         .clearAndSetSemantics {}
                         .alpha(0f)
-                        .layerBackdrop(tabsBackdrop)
+                        .then(if (tabsBackdrop != null) Modifier.layerBackdrop(tabsBackdrop) else Modifier)
                         .graphicsLayer { translationX = panelOffset }
-                        .drawBackdrop(
+                        .then(if (isBlurEnabled && backdrop != null) Modifier.drawBackdrop(
                             backdrop = backdrop,
                             shape = { pillShape },
                             effects = {
@@ -374,7 +380,7 @@ fun FloatingBottomBar(
                                 )
                             },
                             onDrawSurface = { drawRect(containerColor) },
-                        )
+                        ) else Modifier)
                         .then(interactiveHighlight.modifier)
                         .height(56.dp)
                         .padding(horizontal = 4.dp)
@@ -397,7 +403,7 @@ fun FloatingBottomBar(
                         }
                         .then(interactiveHighlight.gestureModifier)
                         .then(dampedDragAnimation.modifier)
-                        .drawBackdrop(
+                        .then(if (combinedBackdrop != null) Modifier.drawBackdrop(
                             backdrop = combinedBackdrop,
                             shape = { pillShape },
                             effects = {
@@ -425,7 +431,7 @@ fun FloatingBottomBar(
                                 )
                                 drawRect(Color.Black.copy(alpha = 0.03f * progress))
                             },
-                        )
+                        ) else Modifier)
                         .innerShadow(shape = pillShape) {
                             InnerShadow(
                                 radius = 8.dp * dampedDragAnimation.pressProgress,

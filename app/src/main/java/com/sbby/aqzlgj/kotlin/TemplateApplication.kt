@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelStore
 import androidx.lifecycle.ViewModelStoreOwner
 import okhttp3.Cache
 import okhttp3.OkHttpClient
+import com.sbby.aqzlgj.kotlin.ui.util.CrashHandler
 import org.lsposed.hiddenapibypass.HiddenApiBypass
 import java.io.File
 import java.util.Locale
@@ -46,6 +47,9 @@ class TemplateApplication : Application(), ViewModelStoreOwner {
     override fun onCreate() {
         super.onCreate()
         templateApp = this
+
+        // 崩溃捕获:尽量在最早注册(锁屏期也能注册,写入失败由内部 try 兜底)
+        CrashHandler.register(this)
 
         if (!isUserUnlocked()) {
             return

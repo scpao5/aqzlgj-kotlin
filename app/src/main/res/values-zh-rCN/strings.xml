@@ -111,6 +111,7 @@
     <string name="cmd_toast_icon_added">图标快捷方式已添加，长按可固定到桌面</string>
     <string name="icon_added_title">图标已添加</string>
     <string name="icon_added_msg">「%1$s」快捷方式已添加。若未自动固定到桌面，可在桌面长按该图标 → 固定到主屏幕。</string>
+    <string name="crash_title">崩溃详情</string>
     <string name="pin_result_ok">已固定到桌面</string>
     <string name="icon_remove">删除</string>
     <string name="icon_removed">已删除</string>

@@ -165,6 +165,7 @@
     <string name="cmd_toast_icon_added">圖示捷徑已新增，長按可固定到桌面</string>
     <string name="icon_added_title">圖示已新增</string>
     <string name="icon_added_msg">「%1$s」捷徑已新增。若未自動固定到桌面，可在桌面長按該圖示 → 固定到主螢幕。</string>
+    <string name="crash_title">崩潰詳情</string>
     <string name="pin_result_ok">已固定到桌面</string>
     <string name="icon_remove">刪除</string>
     <string name="icon_removed">已刪除</string>

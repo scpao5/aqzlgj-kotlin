@@ -51,6 +51,12 @@
             android:name=".ui.util.PinShortcutReceiver"
             android:exported="false" />
 
+        <activity
+            android:name=".ui.util.CrashActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"

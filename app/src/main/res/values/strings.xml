@@ -116,6 +116,7 @@
     <string name="cmd_toast_icon_added">Icon shortcut added, long-press it to pin to home screen</string>
     <string name="icon_added_title">Icon added</string>
     <string name="icon_added_msg">Shortcut "%1$s" added. If it was not pinned automatically, long-press the icon on the home screen and choose "Pin to home screen".</string>
+    <string name="crash_title">Crash Details</string>
     <string name="pin_result_ok">Pinned to home screen</string>
     <string name="icon_remove">Remove</string>
     <string name="icon_removed">Removed</string>

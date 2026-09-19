@@ -65,3 +65,7 @@ Uam-TestMap-Loot|open Uam-TestMap-Loot
 生成特遣人机|summon BP_UamAICharacter_C
 生成特遣复制体|summon BP_UamCharacter_C
 取消飞行/取消幽灵模式|walk
+训练场(刷皮肤进仓库/改枪)|open TutorialRange_Main?SGGM=1-8-0-0
+新手教程1|Open Farmland_715_Main?SGGM=1-2-0-91
+新手教程2|open Farmland_715_Main?SGGM=1-2-0-100
+剧情模式|open Armory_main?SGGM=2-2-0-37
